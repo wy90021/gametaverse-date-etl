@@ -12,7 +12,7 @@ in_game_address = set([
     rent_address,
     withdrawl_final_address,
     generate_shark_address,
-    auction_address
+    auction_address,
 ])
 def get_in_game_contract_transaction_logs():
     count = 0
