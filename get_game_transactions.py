@@ -74,6 +74,7 @@ in_game_address = set([
     sea_token_addr
 ])
 
+in_game_transaction_hashes =  {}
 
 def decode_hex_value(hex): 
     dec_str = str(int(hex, 16))
@@ -86,46 +87,22 @@ def decode_hex_value(hex):
     else:
         return int(dec_str[0:i+1]) / 10 ** (i - 1)
 
-def get_user_transctions():
-    user_transactions = {}
-    in_game_transactions = {}
-    # Look up game transactions in a more efficient way
+
+
+def get_game_transaction_hashes() :
+    output_file = open("in-game-transaction-hashes.csv", "w")
     with open("transactions.csv", "r") as csv_file:
         data_reader = csv.reader(csv_file)
         for row in data_reader:
             trans = transaction(row)
             if trans.from_address in in_game_address or trans.to_address in in_game_address:
-                in_game_transactions[trans.hash] = trans
-    # print(in_game_transactions)
+                # Upload to Dynamo
+                output_file.write(trans.hash+"\n")
+    output_file.close()
 
-    with open("in-game-logs.csv", "r") as csv_file:
-        data_reader = csv.reader(csv_file)
-        csv_file.readline()
-        for row in data_reader:
-            trans_log = log(row)
-            
-            if trans_log.data_dec_trim == 0:
-                print("Invalid value, log: ")
-                print(trans_log)
-                continue
-            if trans_log.topics[0] != transfer_topic:
-                print("Log is not for transfer: ")
-                print(trans_log)
-                continue
-            trans = in_game_transactions[trans_log.transaction_hash]
-            if trans.from_address in user_transactions.keys():
-                user_transactions[trans.from_address] = user_transactions[trans.from_address] + trans_log.data_dec_trim
-            else:
-                user_transactions[trans.from_address] =  trans_log.data_dec_trim
-            if trans.to_address in user_transactions.keys():
-                user_transactions[trans.to_address] = user_transactions[trans.to_address] + trans_log.data_dec_trim
-            else:
-                user_transactions[trans.to_address] =  trans_log.data_dec_trim
-
-    print(user_transactions)
 
 def main():
-    get_user_transctions()
+    get_game_transaction_hashes()
 
 if __name__ == "__main__":
     main()
