@@ -4,6 +4,7 @@ import sys
 # import time, json
 import subprocess
 from pprint import pprint
+import boto3
 
 csv.field_size_limit(sys.maxsize)
 
@@ -22,19 +23,35 @@ class transaction:
     from_address  = ""
     to_address = ""
     value = 0
-
     def __init__(self, row):
         self.hash = row[0]
         self.block_number = row[3]
         self.from_address = row[5]
         self.to_address = row[6]
         self.value = row[7]
+        self.timestamp = row[11]
+        self.input = row[10]
+        self.info = {
+            'from_address': self.from_address,
+            'to_address': self.to_address,
+            'value': self.value,
+            'input': row[10],
+        }
     def __repr__(self):
         return '%s(%s)' % (
             type(self).__name__,
             ', '.join('%s=%s' % item for item in vars(self).items())
         )
-
+    def toMap(self): 
+        return {
+            'hash': self.hash,
+            'block_number': self.block_number,
+            'timestamp': self.timestamp,
+            'from_address': self.from_address,
+            'to_address': self.to_address,
+            'value': self.value,
+            'input': self.input,
+        }
 
 class log:
     transaction_hash = ""
@@ -43,8 +60,10 @@ class log:
     data = ""
     data_dec = 0
     data_dec_trim = 0
-
+    log_index = 0
+    info = {}
     def __init__(self, row):
+        self.log_index = row[0]
         self.transaction_hash = row[1]
         self.block_number = row[4]
         self.address = row[5]
@@ -58,12 +77,26 @@ class log:
         except ValueError:
             print("cannot decode value: " + self.data)
         self.topics = row[7].split(',')
+        self.info = {
+            'block_number': self.block_number,
+            'address': self.address,
+            'data': self.data,
+            'topics': self.topics,
+            'data_dec_trim':  str(self.data_dec_trim)
+        }
     def __repr__(self):
         return '%s(%s)' % (
             type(self).__name__,
             ', '.join('%s=%s' % item for item in vars(self).items())
         )
-
+    def toMap(self): 
+        return {
+            'log_index': self.log_index,
+            'address': self.address,
+            'data': self.data,
+            'topics': self.topics,
+            'data_dec_trim': str(self.data_dec_trim)
+        }
 
 in_game_address = set([
     rent_address,
@@ -97,13 +130,20 @@ def get_user_transctions():
             if trans.from_address in in_game_address or trans.to_address in in_game_address:
                 in_game_transactions[trans.hash] = trans
     # print(in_game_transactions)
-
+    dynamodb = boto3.resource('dynamodb', endpoint_url="http://localhost:8000")
+    table_logs = dynamodb.Table('gametaverse-starsharks-logs')
+    table_user = dynamodb.Table('gametaverse-starsharks-users')
     with open("in-game-logs.csv", "r") as csv_file:
         data_reader = csv.reader(csv_file)
         csv_file.readline()
         for row in data_reader:
             trans_log = log(row)
-            
+            table_logs.put_item(
+                Item={
+                    'TransactionHash': trans_log.transaction_hash,
+                    'LogIndex': int(trans_log.log_index),
+                    'info':  trans_log.info
+                })
             if trans_log.data_dec_trim == 0:
                 print("Invalid value, log: ")
                 print(trans_log)
@@ -113,6 +153,25 @@ def get_user_transctions():
                 print(trans_log)
                 continue
             trans = in_game_transactions[trans_log.transaction_hash]
+            # Only save token transfers, need to think how to make WalletAddress+TransactionTimestamp uniq if we need to save all logs in a transaction
+            table_user.put_item(
+                Item={
+                    'WalletAddress': trans.from_address,
+                    'TransactionTimestamp': trans.timestamp,
+                    'info':  {
+                        'trans': trans.toMap(),
+                        'logs': trans_log.toMap()
+                    }
+                })
+            table_user.put_item(
+                Item={
+                    'WalletAddress': trans.to_address,
+                    'TransactionTimestamp': trans.timestamp,
+                    'info': {
+                        'trans': trans.toMap(),
+                        'logs': trans_log.toMap()
+                    }
+                })
             if trans.from_address in user_transactions.keys():
                 user_transactions[trans.from_address] = user_transactions[trans.from_address] + trans_log.data_dec_trim
             else:

@@ -4,6 +4,7 @@ import sys
 # import time, json
 import subprocess
 from pprint import pprint
+import boto3
 
 csv.field_size_limit(sys.maxsize)
 
@@ -22,6 +23,7 @@ class transaction:
     from_address  = ""
     to_address = ""
     value = 0
+    info = {}
 
     def __init__(self, row):
         self.hash = row[0]
@@ -29,6 +31,12 @@ class transaction:
         self.from_address = row[5]
         self.to_address = row[6]
         self.value = row[7]
+        self.info = {
+            'from_address': self.from_address,
+            'to_address': self.to_address,
+            'value': self.value,
+            'input': row[10],
+        }
     def __repr__(self):
         return '%s(%s)' % (
             type(self).__name__,
@@ -38,7 +46,7 @@ class transaction:
 
 class log:
     transaction_hash = ""
-    block_number = ""
+    block_number = 0
     address  = ""
     data = ""
     data_dec = 0
@@ -91,12 +99,21 @@ def decode_hex_value(hex):
 
 def get_game_transaction_hashes() :
     output_file = open("in-game-transaction-hashes.csv", "w")
+    dynamodb = boto3.resource('dynamodb', endpoint_url="http://localhost:8000")
+
+    table = dynamodb.Table('gametaverse-starsharks-transactions')
     with open("transactions.csv", "r") as csv_file:
         data_reader = csv.reader(csv_file)
         for row in data_reader:
             trans = transaction(row)
             if trans.from_address in in_game_address or trans.to_address in in_game_address:
                 # Upload to Dynamo
+                table.put_item(
+                    Item={
+                        'BlockNumber': int(trans.block_number),
+                        'TransactionHash': trans.hash,
+                        'info':  trans.info
+                    })
                 output_file.write(trans.hash+"\n")
     output_file.close()
 
