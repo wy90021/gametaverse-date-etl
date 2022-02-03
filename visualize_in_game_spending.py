@@ -31,8 +31,8 @@ def get_per_user_spending():
             else:
                 user_transaction_volume_dict[user_address] = transaction_value
 
-    #return user_transaction_volume_dict
-    return dict(filter(lambda elem: elem[1] < 100, user_transaction_volume_dict.items()))
+    return user_transaction_volume_dict
+    #return dict(filter(lambda elem: elem[1] < 100, user_transaction_volume_dict.items()))
 
 def get_spending_distribution(user_transaction_volume_dict):
     spending_distribution = {}
@@ -41,10 +41,11 @@ def get_spending_distribution(user_transaction_volume_dict):
             spending_distribution[user_transaction_volume] += 1
         else:
             spending_distribution[user_transaction_volume] = 1
-    print("sorted spending distribution")
-    for key, value in sorted(spending_distribution.items(), key=lambda item: item[1]):
-        print(key, value)
-    print("sorted spending distribution end")
+    print("spending_distribution: ", spending_distribution)
+    #print("sorted spending distribution")
+    #for key, value in sorted(spending_distribution.items(), key=lambda item: item[1]):
+    #    print(key, value)
+    #print("sorted spending distribution end")
     total_frequency = sum(spending_distribution.values())
     #print("total_frequency: ", total_frequency)
 
@@ -59,7 +60,7 @@ def get_spending_distribution(user_transaction_volume_dict):
 
 
 def visualize_curve_line(spending_2d_matrix):
-    #print(spending_2d_matrix)
+    print(spending_2d_matrix)
     fig, ax = plt.subplots()
 
     x = np.array(spending_2d_matrix[0])

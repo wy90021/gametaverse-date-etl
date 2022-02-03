@@ -1,4 +1,4 @@
-ethereumetl export_blocks_and_transactions --start-block 14803641 --end-block 14804641 --transactions-output transactions.csv --provider-uri https://bsc-dataseed.binance.org/ --max-workers 5 --batch-size 100
+ethereumetl export_blocks_and_transactions --start-block 14658709 --end-block 14687447 --transactions-output transactions.csv --provider-uri https://bsc-dataseed.binance.org/ --max-workers 5 --batch-size 100
 
 # filter transaction by game contracts, upload to DynamoDB and output in-game-transaction-hashes.csv
 python3 get_game_transactions.py 
