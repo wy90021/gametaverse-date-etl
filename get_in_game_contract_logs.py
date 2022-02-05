@@ -1,4 +1,5 @@
 import csv
+from email import header
 import sys
 
 csv.field_size_limit(sys.maxsize)
@@ -25,6 +26,8 @@ def get_in_game_contract_transaction_logs():
             if row[5] in in_game_address:
                 in_game_transaction_hashes.add(row[1])
     with open("logs.csv", "r") as csv_file:
+        header_row = ["log_index","transaction_hash","transaction_index","block_hash","block_number","address","data","topics"]
+        data_writer.writerow(header_row)
         data_reader = csv.reader(csv_file)
         for row in data_reader:
             if row[1] in in_game_transaction_hashes:
