@@ -1,8 +1,5 @@
 import csv
 import sys
-# from web3 import Web3
-# import time, json
-import subprocess
 from pprint import pprint
 import boto3
 
@@ -17,6 +14,7 @@ sea_token_addr = "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa"
 withdraw_reward = "0x2df5471b6e25b9dcad2d6169876a9e6a4f5ae882"
 
 transfer_topic = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+
 class transaction:
     hash = ""
     block_number = ""
@@ -59,7 +57,6 @@ class log:
     address  = ""
     data = ""
     data_dec = 0
-    data_dec_trim = 0
     log_index = 0
     info = {}
     def __init__(self, row):
@@ -70,9 +67,7 @@ class log:
         self.data = row[6]
         try: 
             self.data_dec = int(self.data, 16)
-            data_dec_trim_str = str(self.data_dec).strip("0")
-            # self.data_dec_trim = int(data_dec_trim_str) / 10 ** (len(data_dec_trim_str) - 2)
-            self.data_dec_trim = decode_hex_value(self.data)
+            self.data_dec_trim = int(self.data_dec) / int(1000000000000000000)
 
         except ValueError:
             print("cannot decode value: " + self.data)
@@ -98,6 +93,34 @@ class log:
             'data_dec_trim': str(self.data_dec_trim)
         }
 
+class transfer:
+    def __init__(self, row):
+        self.token_address = row[0] 
+        self.from_address = row[1]
+        self.to_address = row[2] 
+        self.value = row[3]
+        self.transaction_hash = row[4]
+        self.log_index = row[5]
+        self.block_number = row[6]
+        self.decoded_value = self.value
+        if self.token_address == sea_token_addr: 
+            self.decoded_value = int(self.value) / int(1000000000000000000)
+        self.info = {
+            'token_address': self.token_address,
+            'from_address': self.from_address,
+            'to_address': self.to_address,
+            'value': self.value,
+            'transaction_hash': self.transaction_hash,
+        }
+    def __repr__(self):
+        return '%s(%s)' % (
+            type(self).__name__,
+            ', '.join('%s=%s' % item for item in vars(self).items())
+        )
+    def toMap(self): 
+        return self.info
+
+
 in_game_address = set([
     rent_address,
     withdrawl_final_address,
@@ -108,18 +131,64 @@ in_game_address = set([
 ])
 
 
-def decode_hex_value(hex): 
-    dec_str = str(int(hex, 16))
-    i = len(dec_str) - 1
-    while i >= 0 and dec_str[i] == '0':
-        i = i - 1
-    numberofZero = len(dec_str) - i - 1
-    if numberofZero > 18:
-        return int(dec_str[0:len(dec_str) - 18])
-    else:
-        return int(dec_str[0:i+1]) / 10 ** (i - 1)
-
 def get_user_transctions():
+    user_transactions = {}
+
+    # Local
+    dynamodb = boto3.resource('dynamodb', endpoint_url="http://localhost:8000")
+    # Prod
+    # session = boto3.Session(profile_name='prod')
+    # dynamodb = session.resource("dynamodb")
+    table_transfer = dynamodb.Table('gametaverse-starsharks-token-transfers')
+    table_user = dynamodb.Table('gametaverse-starsharks-users')
+    with open("in-game-token-transfers.csv", "r") as csv_file:
+        data_reader = csv.reader(csv_file)
+        csv_file.readline()
+        for row in data_reader:
+            transfer_log = transfer(row)
+            table_transfer.put_item(
+                Item={
+                    'BlockNumber':  int(transfer_log.block_number),
+                    'LogIndex': int(transfer_log.log_index),
+                    'info':  transfer_log.info
+                })
+            # print(transfer_log)
+            table_user.put_item(
+                Item={
+                    'WalletAddress': transfer_log.from_address,
+                    'BlockNumber': int(transfer_log.block_number),
+                    'info': {
+                        'transfer': transfer_log.info
+                    }
+                }
+            )
+            # need to handle the case where a user has multiple transfers under one block
+
+            # table_user.update_item(
+            #     Key={
+            #         'WalletAddress': transfer.from_address,
+            #         'BlockNumber': transfer.block_number
+            #     },
+            #     UpdateExpression="add info.transfers :t",
+            #     ExpressionAttributeValues={
+            #         ':r': transfer,
+            #     },
+            #     ReturnValues="UPDATED_NEW"
+            # )
+            if transfer_log.token_address == sea_token_addr:
+                if transfer_log.from_address in user_transactions.keys():
+                    user_transactions[transfer_log.from_address] = user_transactions[transfer_log.from_address] + transfer_log.decoded_value
+                else:
+                    user_transactions[transfer_log.from_address] =  transfer_log.decoded_value
+
+                if transfer_log.to_address in user_transactions.keys():
+                    user_transactions[transfer_log.to_address] = user_transactions[transfer_log.to_address] + transfer_log.decoded_value
+                else:
+                    user_transactions[transfer_log.to_address] =  transfer_log.decoded_value
+
+    print(user_transactions)
+
+def read_from_logs():
     user_transactions = {}
     in_game_transactions = {}
     # Look up game transactions in a more efficient way
@@ -130,6 +199,7 @@ def get_user_transctions():
             if trans.from_address in in_game_address or trans.to_address in in_game_address:
                 in_game_transactions[trans.hash] = trans
     # print(in_game_transactions)
+
     dynamodb = boto3.resource('dynamodb', endpoint_url="http://localhost:8000")
     table_logs = dynamodb.Table('gametaverse-starsharks-logs')
     table_user = dynamodb.Table('gametaverse-starsharks-users')
@@ -182,7 +252,6 @@ def get_user_transctions():
                 user_transactions[trans.to_address] =  trans_log.data_dec_trim
 
     print(user_transactions)
-
 def main():
     get_user_transctions()
 

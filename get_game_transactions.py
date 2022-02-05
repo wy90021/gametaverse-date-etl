@@ -108,15 +108,14 @@ def get_game_transaction_hashes() :
             trans = transaction(row)
             if trans.from_address in in_game_address or trans.to_address in in_game_address:
                 # Upload to Dynamo
-                table.put_item(
-                    Item={
-                        'BlockNumber': int(trans.block_number),
-                        'TransactionHash': trans.hash,
-                        'info':  trans.info
-                    })
+                # table.put_item(
+                #     Item={
+                #         'BlockNumber': int(trans.block_number),
+                #         'TransactionHash': trans.hash,
+                #         'info':  trans.info
+                #     })
                 output_file.write(trans.hash+"\n")
     output_file.close()
-
 
 def main():
     get_game_transaction_hashes()
