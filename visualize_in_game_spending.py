@@ -5,11 +5,35 @@ from scipy.interpolate import make_interp_spline
 import csv
 import sys
 from datetime import datetime
+import requests
 
 csv.field_size_limit(sys.maxsize)
 
 burn_address = "0x0000000000000000000000000000000000000000"
 sea_token = "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa"
+
+def get_per_user_spending_from_api():
+    data = {
+    	"jsonrpc":"2.0",
+    	"method":"getUserSpendingDistribution",
+    	"params":[{
+            "gameId": "StarSharks",
+            "fromTimestamp": 1642636800,
+            "toTimestamp": 1642982400
+        }]
+    }
+    response = requests.post('https://wksix6r85d.execute-api.us-west-1.amazonaws.com/staging', json = data)
+    print("response is: ", response.json())
+    distribution = {}
+    for key, value in response.json().items():
+        distribution[int(key)] = value
+    print("distribution is: ", distribution)
+    user_transaction_volume_arr = sorted(distribution.keys())
+    user_transaction_volume_frequency_arr = [0] * len(user_transaction_volume_arr)
+    for i, user_transaction_volume in enumerate(user_transaction_volume_arr):
+        #print("frequency: ", spending_distribution[user_transaction_volume])
+        user_transaction_volume_frequency_arr[i] = float(distribution[user_transaction_volume])
+    return [user_transaction_volume_arr, user_transaction_volume_frequency_arr]
 
 def get_per_user_spending():
     user_transaction_volume_dict = {}
@@ -79,13 +103,15 @@ def visualize_curve_line(spending_2d_matrix):
     plt.show()
 
 def main():
-    user_transaction_volume_dict = get_per_user_spending()
+    #user_transaction_volume_dict = get_per_user_spending()
+    user_transaction_volume_dict = get_per_user_spending_from_api()
+    visualize_curve_line(user_transaction_volume_dict)
 
     #for user_address, user_transaction_volume in user_transaction_volume_dict.items():
     #    if user_transaction_volume > 100:
     #        print("user_address, user_transaction_volume", user_address, user_transaction_volume)
-    spending_2d_matrix = get_spending_distribution(user_transaction_volume_dict)
-    visualize_curve_line(spending_2d_matrix)
+    #spending_2d_matrix = get_spending_distribution(user_transaction_volume_dict)
+    #visualize_curve_line(spending_2d_matrix)
 
 if __name__ == "__main__":
     main()
