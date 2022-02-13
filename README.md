@@ -6,7 +6,8 @@
 1. Run bash scripts.sh, change the --start-block and --end-block if needed
 2. check tables by running 
 ```
-aws dynamodb scan --table-name gametaverse-starsharks-transactions --endpoint-url=http://localhost:8000
-aws dynamodb scan --table-name gametaverse-starsharks-logs --endpoint-url=http://localhost:8000
-aws dynamodb scan --table-name gametaverse-starsharks-users --endpoint-url=http://localhost:8000
+aws dynamodb scan --table-name gametaverse-block-timestamp --endpoint-url=http://localhost:8000 --max-items 100
+aws dynamodb scan --table-name gametaverse-starsharks-transfer --endpoint-url=http://localhost:8000 --max-items 100
+aws dynamodb scan --table-name gametaverse-user-profile --endpoint-url=http://localhost:8000 --max-items 100
+aws dynamodb scan --table-name gametaverse-new-user-time --endpoint-url=http://localhost:8000 --max-items 100
 ```

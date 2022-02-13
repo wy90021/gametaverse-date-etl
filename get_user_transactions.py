@@ -106,11 +106,10 @@ class transfer:
         if self.token_address == sea_token_addr: 
             self.decoded_value = int(self.value) / int(1000000000000000000)
         self.info = {
-            'token_address': self.token_address,
-            'from_address': self.from_address,
-            'to_address': self.to_address,
-            'value': self.value,
+            'value': str(self.decoded_value),
             'transaction_hash': self.transaction_hash,
+            'block_number': self.block_number,
+            'log_index': self.log_index,
         }
     def __repr__(self):
         return '%s(%s)' % (
@@ -131,6 +130,9 @@ in_game_address = set([
 ])
 
 
+def getTransferID(blockNumber, logIndex):
+    return int(blockNumber)*10000 + int(logIndex)
+
 def get_user_transctions():
     user_transactions = {}
 
@@ -139,29 +141,27 @@ def get_user_transctions():
     # Prod
     # session = boto3.Session(profile_name='prod')
     # dynamodb = session.resource("dynamodb")
-    table_transfer = dynamodb.Table('gametaverse-starsharks-token-transfers')
-    table_user = dynamodb.Table('gametaverse-starsharks-users')
+    table_transfer = dynamodb.Table('gametaverse-starsharks-transfer')
+    table_user_profile = dynamodb.Table('gametaverse-user-profile')
+    table_new_user = dynamodb.Table('gametaverse-new-user-time')
+
     with open("in-game-token-transfers.csv", "r") as csv_file:
         data_reader = csv.reader(csv_file)
         csv_file.readline()
         for row in data_reader:
             transfer_log = transfer(row)
+            transferID = getTransferID(transfer_log.block_number, transfer_log.log_index)
             table_transfer.put_item(
                 Item={
-                    'BlockNumber':  int(transfer_log.block_number),
-                    'LogIndex': int(transfer_log.log_index),
+                    'TokenAddress':  transfer_log.token_address,
+                    'TransferID': transferID,
+                    'FromAddress': transfer_log.from_address,
+                    'ToAddress': transfer_log.to_address,
                     'info':  transfer_log.info
                 })
             # print(transfer_log)
-            table_user.put_item(
-                Item={
-                    'WalletAddress': transfer_log.from_address,
-                    'BlockNumber': int(transfer_log.block_number),
-                    'info': {
-                        'transfer': transfer_log.info
-                    }
-                }
-            )
+            update_if_new_user(table_user_profile, table_new_user, transferID, transfer_log.from_address)
+            update_if_new_user(table_user_profile, table_new_user, transferID, transfer_log.to_address)
             # need to handle the case where a user has multiple transfers under one block
 
             # table_user.update_item(
@@ -188,70 +188,31 @@ def get_user_transctions():
 
     print(user_transactions)
 
-def read_from_logs():
-    user_transactions = {}
-    in_game_transactions = {}
-    # Look up game transactions in a more efficient way
-    with open("transactions.csv", "r") as csv_file:
-        data_reader = csv.reader(csv_file)
-        for row in data_reader:
-            trans = transaction(row)
-            if trans.from_address in in_game_address or trans.to_address in in_game_address:
-                in_game_transactions[trans.hash] = trans
-    # print(in_game_transactions)
+def update_if_new_user(table_user_profile, table_new_user, transferID, user): 
+    user_profile = table_user_profile.get_item(
+        Key={
+            "WalletAddress": user,
+            "GameName": "Starsharks"
+        },
+    )
+    if "Item" in user_profile:
+        return
+    print(user + " is new to Starsharks\n")
+    table_user_profile.put_item(
+        Item={
+            'WalletAddress': user,
+            'GameName': 'Starsharks',
+            'JoinTime':  transferID,
+        },
+    )
+    table_new_user.put_item(
+        Item={
+            'GameName': 'Starsharks',
+            'TransferID': transferID,
+            'User': user,
+        }
+    )
 
-    dynamodb = boto3.resource('dynamodb', endpoint_url="http://localhost:8000")
-    table_logs = dynamodb.Table('gametaverse-starsharks-logs')
-    table_user = dynamodb.Table('gametaverse-starsharks-users')
-    with open("in-game-logs.csv", "r") as csv_file:
-        data_reader = csv.reader(csv_file)
-        csv_file.readline()
-        for row in data_reader:
-            trans_log = log(row)
-            table_logs.put_item(
-                Item={
-                    'TransactionHash': trans_log.transaction_hash,
-                    'LogIndex': int(trans_log.log_index),
-                    'info':  trans_log.info
-                })
-            if trans_log.data_dec_trim == 0:
-                print("Invalid value, log: ")
-                print(trans_log)
-                continue
-            if trans_log.topics[0] != transfer_topic:
-                print("Log is not for transfer: ")
-                print(trans_log)
-                continue
-            trans = in_game_transactions[trans_log.transaction_hash]
-            # Only save token transfers, need to think how to make WalletAddress+TransactionTimestamp uniq if we need to save all logs in a transaction
-            table_user.put_item(
-                Item={
-                    'WalletAddress': trans.from_address,
-                    'TransactionTimestamp': trans.timestamp,
-                    'info':  {
-                        'trans': trans.toMap(),
-                        'logs': trans_log.toMap()
-                    }
-                })
-            table_user.put_item(
-                Item={
-                    'WalletAddress': trans.to_address,
-                    'TransactionTimestamp': trans.timestamp,
-                    'info': {
-                        'trans': trans.toMap(),
-                        'logs': trans_log.toMap()
-                    }
-                })
-            if trans.from_address in user_transactions.keys():
-                user_transactions[trans.from_address] = user_transactions[trans.from_address] + trans_log.data_dec_trim
-            else:
-                user_transactions[trans.from_address] =  trans_log.data_dec_trim
-            if trans.to_address in user_transactions.keys():
-                user_transactions[trans.to_address] = user_transactions[trans.to_address] + trans_log.data_dec_trim
-            else:
-                user_transactions[trans.to_address] =  trans_log.data_dec_trim
-
-    print(user_transactions)
 def main():
     get_user_transctions()
 
