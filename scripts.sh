@@ -1,6 +1,6 @@
 if [ -z "$1" ]
 then
-      echo "need date input, e.g. bash scripts.sh 2022-01-01"
+      echo "need date input, e.g. bash scripts.sh 2022-01-01 prod"
       exit 0
 fi
 env="local"
@@ -15,14 +15,17 @@ rangeArr=(${range//,/ })
 echo "Block range for $1: $range"
 echo "Env: ${env}"
 ethereumetl export_blocks_and_transactions --start-block ${rangeArr[0]} --end-block ${rangeArr[1]} --blocks-output blocks.csv --transactions-output transactions.csv --provider-uri https://bsc-dataseed.binance.org/ --max-workers 5 --batch-size 100 
+echo "Populating gametaverse-block-timestamp table"
 python3 populate_blocks.py  --env ${env}
 
 # filter transaction by game contracts, output in-game-transaction-hashes.csv
+echo "Get Transaction IDs"
 python3 get_game_transactions.py
 
 ethereumetl export_receipts_and_logs --transaction-hashes in-game-transaction-hashes.csv --logs-output in-game-logs.csv --provider-uri https://bsc-dataseed.binance.org/ --max-workers 5 --batch-size 100
 ethereumetl extract_token_transfers --logs in-game-logs.csv --output in-game-token-transfers.csv
 
+echo "Populating gametaverse-new-user-time, gametaverse-starsharks-transfer, gametaverse-user-profile table"
 python3 get_user_transactions.py --env ${env}
 
 

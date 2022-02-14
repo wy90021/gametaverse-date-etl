@@ -11,3 +11,9 @@ aws dynamodb scan --table-name gametaverse-starsharks-transfer --endpoint-url=ht
 aws dynamodb scan --table-name gametaverse-user-profile --endpoint-url=http://localhost:8000 --max-items 100
 aws dynamodb scan --table-name gametaverse-new-user-time --endpoint-url=http://localhost:8000 --max-items 100
 ```
+
+# Set up env 
+sudo apt-get install python3.7
+sudo apt-get install pip3
+pip3 install ethereum-etl
+pip3 install boto3
