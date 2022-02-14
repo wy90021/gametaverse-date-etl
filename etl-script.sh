@@ -3,12 +3,6 @@ then
       echo "need date input, e.g. bash scripts.sh 2022-01-01 prod"
       exit 0
 fi
-env="local"
-if [ -n "$2" ]
-then
-      echo "set env to $2"
-      env=$2
-fi
 
 range=$(ethereumetl get_block_range_for_date -d $1 --provider-uri https://bsc-dataseed.binance.org/)
 rangeArr=(${range//,/ })
