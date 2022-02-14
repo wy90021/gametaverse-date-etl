@@ -69,7 +69,7 @@ in_game_transaction_hashes =  {}
 
 def get_game_transaction_hashes(date, transaction_file) :
     output_file = open(date+ "/in-game-transaction-hashes.csv", "w")
-    with open("transaction_file", "r") as csv_file:
+    with open(transaction_file, "r") as csv_file:
         data_reader = csv.reader(csv_file)
         for row in data_reader:
             trans = transaction(row)
