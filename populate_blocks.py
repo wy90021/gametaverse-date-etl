@@ -1,14 +1,14 @@
 
-from cgi import test
 import csv
 import sys
-import boto3
+from dynamodbclient import *
 
 csv.field_size_limit(sys.maxsize)
 
-def populate_blocks():
-    # Local
-    dynamodb = boto3.resource('dynamodb', endpoint_url="http://localhost:8000")
+def populate_blocks(env):
+    dynamodb = getDynamoDBClient(env)
+    if dynamodb is None:
+        sys.exit("Can't configure dynamoDB client")
     table_blocks = dynamodb.Table('gametaverse-block-timestamp')
     with open("blocks.csv", "r") as csv_file:
         data_reader = csv.reader(csv_file)
@@ -20,8 +20,13 @@ def populate_blocks():
                     'Timestamp': int(row[16]),
                     'BlockNumber': int(row[0]),
                 })
-def main():
-    populate_blocks()
+def main(env="local"):
+    populate_blocks(env)
 
 if __name__ == "__main__":
-    main()
+    args = sys.argv[1:]
+    env = "local"
+    if len(args) > 1 and args[0] == "--env" and args[1] == "prod":
+        env = "prod"
+
+    main(env)

@@ -1,7 +1,6 @@
 import csv
 import sys
-from pprint import pprint
-import boto3
+from dynamodbclient import *
 
 csv.field_size_limit(sys.maxsize)
 
@@ -133,14 +132,11 @@ in_game_address = set([
 def getTransferID(blockNumber, logIndex):
     return int(blockNumber)*10000 + int(logIndex)
 
-def get_user_transctions():
+def get_user_transctions(env):
     user_transactions = {}
-
-    # Local
-    dynamodb = boto3.resource('dynamodb', endpoint_url="http://localhost:8000")
-    # Prod
-    # session = boto3.Session(profile_name='prod')
-    # dynamodb = session.resource("dynamodb")
+    dynamodb = getDynamoDBClient(env)
+    if dynamodb is None:
+        sys.exit("Can't configure dynamoDB client")
     table_transfer = dynamodb.Table('gametaverse-starsharks-transfer')
     table_user_profile = dynamodb.Table('gametaverse-user-profile')
     table_new_user = dynamodb.Table('gametaverse-new-user-time')
@@ -162,19 +158,7 @@ def get_user_transctions():
             # print(transfer_log)
             update_if_new_user(table_user_profile, table_new_user, transferID, transfer_log.from_address)
             update_if_new_user(table_user_profile, table_new_user, transferID, transfer_log.to_address)
-            # need to handle the case where a user has multiple transfers under one block
 
-            # table_user.update_item(
-            #     Key={
-            #         'WalletAddress': transfer.from_address,
-            #         'BlockNumber': transfer.block_number
-            #     },
-            #     UpdateExpression="add info.transfers :t",
-            #     ExpressionAttributeValues={
-            #         ':r': transfer,
-            #     },
-            #     ReturnValues="UPDATED_NEW"
-            # )
             if transfer_log.token_address == sea_token_addr:
                 if transfer_log.from_address in user_transactions.keys():
                     user_transactions[transfer_log.from_address] = user_transactions[transfer_log.from_address] + transfer_log.decoded_value
@@ -195,7 +179,7 @@ def update_if_new_user(table_user_profile, table_new_user, transferID, user):
             "GameName": "Starsharks"
         },
     )
-    if "Item" in user_profile:
+    if "Item" in user_profile and user_profile["Item"]["JoinTime"] <= transferID:
         return
     print(user + " is new to Starsharks\n")
     table_user_profile.put_item(
@@ -213,8 +197,13 @@ def update_if_new_user(table_user_profile, table_new_user, transferID, user):
         }
     )
 
-def main():
-    get_user_transctions()
+def main(env="local"):
+    get_user_transctions(env)
 
 if __name__ == "__main__":
-    main()
+    args = sys.argv[1:]
+    env = "local"
+    if len(args) > 1 and args[0] == "--env" and args[1] == "prod":
+        env = "prod"
+
+    main(env)
