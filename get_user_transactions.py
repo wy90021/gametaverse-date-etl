@@ -132,7 +132,7 @@ in_game_address = set([
 def getTransferID(blockNumber, logIndex):
     return int(blockNumber)*10000 + int(logIndex)
 
-def get_user_transctions(env):
+def get_user_transctions(env, transfer_file):
     user_transactions = {}
     dynamodb = getDynamoDBClient(env)
     if dynamodb is None:
@@ -141,7 +141,7 @@ def get_user_transctions(env):
     table_user_profile = dynamodb.Table('gametaverse-user-profile')
     table_new_user = dynamodb.Table('gametaverse-new-user-time')
 
-    with open("in-game-token-transfers.csv", "r") as csv_file:
+    with open(transfer_file, "r") as csv_file:
         data_reader = csv.reader(csv_file)
         csv_file.readline()
         for row in data_reader:
@@ -198,12 +198,12 @@ def update_if_new_user(table_user_profile, table_new_user, transferID, user):
     )
 
 def main(env="local"):
-    get_user_transctions(env)
+    get_user_transctions(env, transfer_file)
 
 if __name__ == "__main__":
     args = sys.argv[1:]
     env = "local"
     if len(args) > 1 and args[0] == "--env" and args[1] == "prod":
         env = "prod"
-
-    main(env)
+    transfer_file = args[2]
+    main(env, transfer_file)
