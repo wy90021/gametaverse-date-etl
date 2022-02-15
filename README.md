@@ -17,3 +17,10 @@ sudo apt-get install python3.7
 sudo apt-get install pip3
 pip3 install ethereum-etl
 pip3 install boto3
+
+
+# How to process a day's data
+
+1. run `bash block-script.sh 2021-12-19` to fetch block data and upload to dynamo
+2. run `bash etl-script.sh 2021-12-19` to fetch transfer data and filter by game
+3. run `bash dynamo-scripts.sh 2021-12-19 prod` to upload transfer and user data
