@@ -1,9 +1,4 @@
-if [ -z "$1" ]
-then
-      echo "need starting date input, e.g. bash block-script.sh 2022-01-01"
-      exit 0
-fi
-d=$1
+
 while [ "$d" != 2022-02-14 ]; do 
   echo $d
   range=$(ethereumetl get_block_range_for_date -d $d --provider-uri https://bsc-dataseed.binance.org/)

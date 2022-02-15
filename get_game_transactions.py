@@ -67,8 +67,8 @@ in_game_address = set([
 in_game_transaction_hashes =  {}
 
 
-def get_game_transaction_hashes(date, transaction_file) :
-    output_file = open(date+ "/in-game-transaction-hashes.csv", "w")
+def get_game_transaction_hashes(date, transaction_file, output) :
+    output_file = open(date+ "/"+output, "w")
     with open(transaction_file, "r") as csv_file:
         data_reader = csv.reader(csv_file)
         for row in data_reader:
@@ -81,4 +81,5 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     date = args[0]
     transaction_file = args[1]
-    get_game_transaction_hashes(date, transaction_file)
+    output_file = args[2]
+    get_game_transaction_hashes(date, transaction_file, output_file)

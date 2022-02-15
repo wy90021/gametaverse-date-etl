@@ -1,6 +1,6 @@
 if [ -z "$1" ]
 then
-      echo "need date input, e.g. bash scripts.sh 2022-01-01 prod"
+      echo "need date input, e.g. bash dynamo-scripts.sh 2022-01-01 prod"
       exit 0
 fi
 env="local"

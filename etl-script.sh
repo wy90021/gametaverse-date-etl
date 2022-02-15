@@ -13,7 +13,7 @@ ethereumetl export_blocks_and_transactions --start-block ${rangeArr[0]} --end-bl
 
 # filter transaction by game contracts, output in-game-transaction-hashes.csv
 echo "Get Transaction IDs"
-python3 get_game_transactions.py $1 $1/transactions.csv
+python3 get_game_transactions.py $1 $1/transactions.csv $1/in-game-transaction-hashes.csv
 
 # Clean up transactions.csv to save disk space
 head -n 2 $1/transactions.csv > $1/transaction-snapshot.csv
