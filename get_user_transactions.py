@@ -197,7 +197,7 @@ def update_if_new_user(table_user_profile, table_new_user, transferID, user):
         }
     )
 
-def main(env="local"):
+def main(env,transfer_file):
     get_user_transctions(env, transfer_file)
 
 if __name__ == "__main__":

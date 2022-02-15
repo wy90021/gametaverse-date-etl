@@ -20,7 +20,7 @@ def populate_blocks(env, block_file):
                     'Timestamp': int(row[16]),
                     'BlockNumber': int(row[0]),
                 })
-def main(env="local"):
+def main(env="local", block_file):
     populate_blocks(env, block_file)
 
 if __name__ == "__main__":
