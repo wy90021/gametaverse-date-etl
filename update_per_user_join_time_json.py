@@ -24,17 +24,13 @@ in_game_address = set([
     }
 }
 
-daily_transfers_with_timestamp_file_path = "in-game-token-transfers-with-timestamp.csv"
+daily_transfers_with_timestamp_file_path = "in-game-token-transfers-with-timestamp-contract.csv"
 per_user_join_time_json_file_path = "../per-user-join-time.json"
 per_user_join_time = {}
 
 daily_transfers_csv_header = ["token_address", "from_address", "to_address", "value", "transaction_hash", "log_index", "block_number", "timestamp"]
 
 def add_new_user_join_time():
-    count = 0
-    output_file = open("in-game-logs.csv", "w")
-    data_writer = csv.writer(output_file)
-    in_game_transaction_hashes = set()
     with open(per_user_join_time_json_file_path, "r") as per_user_join_time_json_file:
         per_user_join_time = json.load(per_user_join_time_json_file)
 
@@ -43,27 +39,35 @@ def add_new_user_join_time():
         next(data_reader)
         for row in data_reader:
             buyer_address = row[1]
-            seller_address = row[2]
+            earner_address = row[2]
             value = float(row[3])
             transaction_hash = row[4]
             block_number = row[6]
             timestamp = row[7]
 
-            if buyer_address in per_user_join_time and per_user_join_time[buyer_address]['timestamp'] < timestamp:
-                continue
+            if buyer_address in per_user_join_time and per_user_join_time[buyer_address]['timestamp'] > timestamp:
+                print("new buyer", buyer_address)
+                per_user_join_time[buyer_address] = {
+                    'timestamp': timestamp,
+                    'transaction_hash': transaction_hash
+                }
+            elif not buyer_address in per_user_join_time:
+                per_user_join_time[buyer_address] = {
+                    'timestamp': timestamp,
+                    'transaction_hash': transaction_hash
+                }
 
-            per_user_join_time[buyer_address] = {
-                'timestamp': timestamp,
-                'transaction_hash': transaction_hash
-            }
-
-            if seller_address in per_user_join_time and per_user_join_time[seller_address]['timestamp'] < timestamp:
-                continue
-
-            per_user_join_time[seller_address] = {
-                'timestamp': timestamp,
-                'transaction_hash': transaction_hash
-            }
+            if earner_address in per_user_join_time and per_user_join_time[earner_address]['timestamp'] > timestamp:
+                print("new earner", earner_address)
+                per_user_join_time[earner_address] = {
+                    'timestamp': timestamp,
+                    'transaction_hash': transaction_hash
+                }
+            elif not earner_address in per_user_join_time:
+                per_user_join_time[earner_address] = {
+                    'timestamp': timestamp,
+                    'transaction_hash': transaction_hash
+                }
 
     with open(per_user_join_time_json_file_path, "w") as per_user_join_time_json_file:
         per_user_join_time_json_file.write(json.dumps(per_user_join_time))

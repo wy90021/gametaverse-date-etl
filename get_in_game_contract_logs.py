@@ -17,7 +17,7 @@ in_game_address = set([
 ])
 def get_in_game_contract_transaction_logs():
     count = 0
-    output_file = open("in-game-logs.csv", "w")
+    output_file = open("in-game-new-logs.csv", "w")
     data_writer = csv.writer(output_file)
     in_game_transaction_hashes = set()
     with open("logs.csv", "r") as csv_file:
