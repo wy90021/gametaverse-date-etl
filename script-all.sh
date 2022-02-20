@@ -28,4 +28,4 @@ ethereumetl export_receipts_and_logs --transaction-hashes $1/in-game-transaction
 ethereumetl extract_token_transfers --logs $1/in-game-logs.csv --output $1/in-game-token-transfers.csv
 
 echo "Populating gametaverse-new-user-time, gametaverse-starsharks-transfer, gametaverse-user-profile table"
-python3 get_user_transactions.py --env ${env} $1/in-game-token-transfers.csv $1/blocks.csv
+python3 upload_user_transactions --env ${env} $1/in-game-token-transfers.csv $1/blocks.csv
