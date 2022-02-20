@@ -66,7 +66,6 @@ in_game_address = set([
 
 in_game_transaction_hashes =  {}
 
-
 def get_game_transaction_hashes(date, transaction_file, output):
     output_file = open(output, "w")
     output_file_full_transactions = open(output.replace("-hashes", ""), "w")
@@ -77,8 +76,10 @@ def get_game_transaction_hashes(date, transaction_file, output):
             trans = transaction(row)
             if trans.from_address in in_game_address or trans.to_address in in_game_address:
                 output_file.write(trans.hash+"\n")
-                output_file_full_transactions.write(trans+"\n")
+                newrow = ','.join(row)
+                output_file_full_transactions.write(newrow+"\n")
     output_file.close()
+    output_file_full_transactions.close()
 
 if __name__ == "__main__":
     args = sys.argv[1:]

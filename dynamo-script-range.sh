@@ -11,4 +11,4 @@ then
 fi
 
 echo "Populating gametaverse-new-user-time, gametaverse-starsharks-transfer, gametaverse-user-profile table"
-python3 get_user_transactions.py --env ${env} $1/in-game-token-transfers-$3-$4.csv
+python3 get_user_transactions.py --env ${env} $1/in-game-token-transfers-$3-$4.csv $1/blocks.csv

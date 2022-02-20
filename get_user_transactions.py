@@ -1,6 +1,7 @@
 import csv
 import sys
 from dynamodbclient import *
+import json
 
 csv.field_size_limit(sys.maxsize)
 
@@ -128,49 +129,50 @@ in_game_address = set([
     sea_token_addr
 ])
 
-
 def getTransferID(blockNumber, logIndex):
     return int(blockNumber)*10000 + int(logIndex)
 
-def get_user_transctions(env, transfer_file):
-    user_transactions = {}
+def getBlockTimestamp(block_file): 
+    block_timestamp = {}
+    with open(block_file, "r") as csv_file:
+        data_reader = csv.reader(csv_file)
+        csv_file.readline()
+        for row in data_reader:
+            block_timestamp[row[0]] = row[16]
+    return block_timestamp
+
+def get_user_transctions(env, transfer_file, block_file):
+    block_timestamps = getBlockTimestamp(block_file)
     dynamodb = getDynamoDBClient(env)
     if dynamodb is None:
         sys.exit("Can't configure dynamoDB client")
     table_transfer = dynamodb.Table('gametaverse-starsharks-transfer')
     table_user_profile = dynamodb.Table('gametaverse-user-profile')
     table_new_user = dynamodb.Table('gametaverse-new-user-time')
-
+    
     with open(transfer_file, "r") as csv_file:
         data_reader = csv.reader(csv_file)
         csv_file.readline()
         for row in data_reader:
             transfer_log = transfer(row)
             transferID = getTransferID(transfer_log.block_number, transfer_log.log_index)
+            timestamp = block_timestamps[transfer_log.block_number]
             table_transfer.put_item(
                 Item={
                     'TokenAddress':  transfer_log.token_address,
                     'TransferID': transferID,
                     'FromAddress': transfer_log.from_address,
                     'ToAddress': transfer_log.to_address,
-                    'info':  transfer_log.info
+                    'info':  transfer_log.info,
+                    'timestamp': timestamp,
                 })
-            # print(transfer_log)
+            transfer_log.timestamp = timestamp
             update_if_new_user(table_user_profile, table_new_user, transferID, transfer_log.from_address)
             update_if_new_user(table_user_profile, table_new_user, transferID, transfer_log.to_address)
+            # res = add_transfer_to_user_profile(table_user_profile, transfer_log.from_address, transfer_log)
+            # print(res)
+            # add_transfer_to_user_profile(table_user_profile, transfer_log.to_address, transfer_log)
 
-            if transfer_log.token_address == sea_token_addr:
-                if transfer_log.from_address in user_transactions.keys():
-                    user_transactions[transfer_log.from_address] = user_transactions[transfer_log.from_address] + transfer_log.decoded_value
-                else:
-                    user_transactions[transfer_log.from_address] =  transfer_log.decoded_value
-
-                if transfer_log.to_address in user_transactions.keys():
-                    user_transactions[transfer_log.to_address] = user_transactions[transfer_log.to_address] + transfer_log.decoded_value
-                else:
-                    user_transactions[transfer_log.to_address] =  transfer_log.decoded_value
-
-    print(user_transactions)
 
 def update_if_new_user(table_user_profile, table_new_user, transferID, user): 
     user_profile = table_user_profile.get_item(
@@ -197,8 +199,23 @@ def update_if_new_user(table_user_profile, table_new_user, transferID, user):
         }
     )
 
-def main(env,transfer_file):
-    get_user_transctions(env, transfer_file)
+def add_transfer_to_user_profile(table_user_profile, user, transfer):
+    result = table_user_profile.update_item(
+        Key={
+            'WalletAddress': user,
+            'GameName': "Starsharks"
+        },
+        UpdateExpression="SET Transfers = list_append(Transfers, :i)",
+        ExpressionAttributeValues={
+            ':i': [json.dumps(transfer)],
+        },
+        ReturnValues="UPDATED_NEW"
+    )
+    if result['ResponseMetadata']['HTTPStatusCode'] == 200 and 'Attributes' in result:
+        return result['Attributes']['Transfers']
+
+def main(env,transfer_file, block_file):
+    get_user_transctions(env, transfer_file, block_file)
 
 if __name__ == "__main__":
     args = sys.argv[1:]
@@ -206,4 +223,5 @@ if __name__ == "__main__":
     if len(args) > 1 and args[0] == "--env" and args[1] == "prod":
         env = "prod"
     transfer_file = args[2]
-    main(env, transfer_file)
+    block_file = args[3]
+    main(env, transfer_file, block_file)
