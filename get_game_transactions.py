@@ -67,14 +67,17 @@ in_game_address = set([
 in_game_transaction_hashes =  {}
 
 
-def get_game_transaction_hashes(date, transaction_file, output) :
+def get_game_transaction_hashes(date, transaction_file, output):
     output_file = open(output, "w")
+    output_file_full_transactions = open(output.replace("-hashes", ""), "w")
+
     with open(transaction_file, "r") as csv_file:
         data_reader = csv.reader(csv_file)
         for row in data_reader:
             trans = transaction(row)
             if trans.from_address in in_game_address or trans.to_address in in_game_address:
                 output_file.write(trans.hash+"\n")
+                output_file_full_transactions.write(trans+"\n")
     output_file.close()
 
 if __name__ == "__main__":
