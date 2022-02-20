@@ -5,12 +5,13 @@ then
 fi
 d=$1
 env="local"
-if [ -n "$2" ]
+if [ -z "$2" ]
 then
-      echo "set env to $2"
-      env=$2
+      echo "need date and env input, e.g. bash block-script.sh 2022-01-01 prod"
+      exit 0
 fi
-echo $d
+env=$2
+echo $d-$env
 range=$(ethereumetl get_block_range_for_date -d $d --provider-uri https://bsc-dataseed.binance.org/)
 rangeArr=(${range//,/ })
 echo "Block range for $d: $range"
