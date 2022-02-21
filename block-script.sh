@@ -18,4 +18,4 @@ echo "Block range for $d: $range"
 mkdir $d
 touch $d/blockrange-${rangeArr[0]}-${rangeArr[1]}.csv
 ethereumetl export_blocks_and_transactions --start-block ${rangeArr[0]} --end-block ${rangeArr[1]} --blocks-output $d/blocks.csv --provider-uri https://bsc-dataseed.binance.org/ --max-workers 5 --batch-size 100 
-python3 populate_blocks.py --env $env $d/blocks.csv
+# python3 populate_blocks.py --env $env $d/blocks.csv

@@ -10,5 +10,7 @@ then
       env=$2
 fi
 
-echo "Populating gametaverse-new-user-time, gametaverse-starsharks-transfer, gametaverse-user-profile table"
-python3 upload_user_transactions --env ${env} $1/in-game-token-transfers.csv $1/blocks.csv
+echo "Populating gametaverse-starsharks-transfer"
+python3 upload_transfers.py --env ${env} $1/in-game-token-transfers.csv $1/blocks.csv
+echo "Populating gametaverse-new-user-time, gametaverse-user-transfer, gametaverse-user-profile table"
+python3 upload_user_transactions.py --env ${env} $1/in-game-token-transfers.csv $1/blocks.csv

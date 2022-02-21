@@ -12,7 +12,8 @@ generate_shark_address = "0x1f7acc330fe462a9468aa47ecdb543787577e1e7"
 auction_address = "0xd78be0b93a3c9d1a9323bca03184accf1a57e548"
 sea_token_addr = "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa"
 withdraw_reward = "0x2df5471b6e25b9dcad2d6169876a9e6a4f5ae882"
-
+nft_address = "0x416f1d70c1c22608814d9f36c492efb3ba8cad4c"
+game_wallet = "0x0000000000000000000000000000000000000000"
 transfer_topic = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
 
 class transaction:
@@ -125,6 +126,8 @@ in_game_address = set([
     generate_shark_address,
     auction_address,
     withdraw_reward,
+    nft_address,
+    game_wallet,
     sea_token_addr
 ])
 
@@ -147,7 +150,8 @@ def upload_user_transctions(env, transfer_file, block_file):
         sys.exit("Can't configure dynamoDB client")
     table_user_profile = dynamodb.Table('gametaverse-user-profile')
     table_new_user = dynamodb.Table('gametaverse-new-user-time')
-    
+    table_user_transfer = dynamodb.Table('gametaverse-user-transfer')
+
     with open(transfer_file, "r") as csv_file:
         data_reader = csv.reader(csv_file)
         csv_file.readline()
@@ -157,9 +161,12 @@ def upload_user_transctions(env, transfer_file, block_file):
             timestamp = block_timestamps[transfer_log.block_number]
             transfer_log.timestamp = timestamp
             transfer_log.transferID = transferID
-
-            update_user_profile(table_user_profile, table_new_user, transfer_log.from_address, transfer_log)
-            update_user_profile(table_user_profile, table_new_user, transfer_log.to_address, transfer_log)
+            if transfer_log.from_address not in in_game_address:
+                update_user_profile(table_user_profile, table_new_user, transfer_log.from_address, transfer_log)
+                upload_user_transfer(table_user_transfer, transfer_log.from_address, transfer_log, transfer_log.to_address, "from")
+            if transfer_log.to_address not in in_game_address:
+                update_user_profile(table_user_profile, table_new_user,  transfer_log.to_address, transfer_log)
+                upload_user_transfer(table_user_transfer, transfer_log.to_address, transfer_log, transfer_log.from_address, "to")
 
 
 def update_user_profile(table_user_profile, table_new_user, userAddress, transfer_log):
@@ -169,28 +176,19 @@ def update_user_profile(table_user_profile, table_new_user, userAddress, transfe
             "GameName": "Starsharks"
         },
     )
-    
-    # temp clean up
-    # table_user_profile.update_item(
-    #     Key={
-    #         'WalletAddress': userAddress,
-    #         'GameName': "Starsharks"
-    #     },
-    #     UpdateExpression="REMOVE Transfers",
-    #     ReturnValues="ALL_NEW"
-    # )
-
-    # user_profile = table_user_profile.get_item(
-    #     Key={
-    #         "WalletAddress": userAddress,
-    #         "GameName": "Starsharks"
-    #     },
-    # )
     if "Item" not in user_profile or user_profile["Item"]["JoinTime"] > transfer_log.transferID:
         user_profile = create_new_user_profile(table_user_profile, table_new_user,  transfer_log, userAddress)
-    else:
-        add_transfer_to_user_profile(table_user_profile, userAddress, transfer_log, user_profile)
-
+    
+    # temp clean up
+    table_user_profile.update_item(
+        Key={
+            'WalletAddress': userAddress,
+            'GameName': "Starsharks"
+        },
+        UpdateExpression="REMOVE Transfers",
+        ReturnValues="ALL_NEW"
+    )
+        
 def create_new_user_profile(table_user_profile, table_new_user, transfer, user): 
     print(user + " is new to Starsharks\n")
     user_profile = table_user_profile.put_item(
@@ -198,7 +196,6 @@ def create_new_user_profile(table_user_profile, table_new_user, transfer, user):
             'WalletAddress': user,
             'GameName': 'Starsharks',
             'JoinTime':  transfer.transferID,
-            'Transfers': {str(transfer.transferID): toJSON(transfer)},
         },
     )
     table_new_user.put_item(
@@ -213,45 +210,20 @@ def create_new_user_profile(table_user_profile, table_new_user, transfer, user):
 def toJSON(obj):
     return json.dumps(obj, default=lambda obj: obj.__dict__)
 
-def add_transfer_to_user_profile(table_user_profile, user, transfer, user_profile):
-    if "Item" in user_profile and "Transfers" not in user_profile["Item"]:
-        result = table_user_profile.update_item(
-            Key={
-                'WalletAddress': user,
-                'GameName': "Starsharks"
-            },
-            UpdateExpression="SET Transfers = :i",
-            ExpressionAttributeValues={
-                ':i': {str(transfer.transferID): toJSON(transfer)},
-            },
-            ReturnValues="UPDATED_NEW"
-        )
-        if result['ResponseMetadata']['HTTPStatusCode'] == 200 and 'Attributes' in result:
-            return result['Attributes']['Transfers']
-    elif "Item" in user_profile and "Transfers" in user_profile["Item"]:
-        try: 
-            result = table_user_profile.update_item(
-                Key={
-                    'WalletAddress': user,
-                    'GameName': "Starsharks"
-                },
-                UpdateExpression="SET #t.#tid = if_not_exists(#t.#tid, :i)",
-                ExpressionAttributeNames={
-                    '#t': "Transfers",
-                    '#tid': str(transfer.transferID),
-                },
-                ExpressionAttributeValues={
-                    ':i': toJSON(transfer),
-                },
-                ReturnValues="UPDATED_NEW"
-            )
-            if result['ResponseMetadata']['HTTPStatusCode'] == 200 and 'Attributes' in result:
-                return result['Attributes']['Transfers']
-        except Exception as ex:
-            print(ex)
-            print(user_profile)
-            print("transferID: " + str(transfer.transferID))
-
+def upload_user_transfer(table_user_transfer, user, transfer, otherUser, role):
+    table_user_transfer.put_item(
+        Item={
+            'WalletAddress': user,
+            'TransferID': transfer.transferID,
+            'GameName': "Starsharks",
+            'Timestamp': transfer.timestamp,
+            'TransactionHash': transfer.info["transaction_hash"],
+            'Role': role,
+            'Value': transfer.info["transaction_hash"],
+            'OtherAddr': otherUser,
+            'TokenAddress': transfer.token_address,
+        }
+    )
 
 def main(env,transfer_file, block_file):
     upload_user_transctions(env, transfer_file, block_file)
