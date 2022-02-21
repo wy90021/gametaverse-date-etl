@@ -94,6 +94,20 @@ aws dynamodb create-table \
     --endpoint-url=http://localhost:8000
 
 aws dynamodb create-table \
+    --table-name gametaverse-user-transfer \
+    --attribute-definitions \
+        AttributeName=WalletAddress,AttributeType=S \
+        AttributeName=TransferID,AttributeType=N \
+    --key-schema \
+        AttributeName=WalletAddress,KeyType=HASH \
+        AttributeName=TransferID,KeyType=RANGE \
+    --provisioned-throughput \
+        ReadCapacityUnits=10,WriteCapacityUnits=5 \
+    --table-class STANDARD \
+    --endpoint-url=http://localhost:8000
+# GameName, Timestamp, TransactionHash, Role, Value, OtherAddr, TokenAddress, 
+
+aws dynamodb create-table \
     --table-name gametaverse-new-user-time \
     --attribute-definitions \
         AttributeName=GameName,AttributeType=S \
