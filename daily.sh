@@ -5,6 +5,6 @@ then
 fi
 d=$1
 
-bash block-script.sh $d prod
-bash etl-script.sh $d
-bash dynamo-scripts.sh $d prod
+bash ~/gametaverse-date-etl/block-script.sh $d prod
+bash ~/gametaverse-date-etl/etl-script.sh $d
+bash ~/gametaverse-date-etl/dynamo-scripts.sh $d prod
