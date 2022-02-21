@@ -24,3 +24,7 @@ pip3 install boto3
 1. run `bash block-script.sh 2021-12-19` to fetch block data and upload to dynamo
 2. run `bash etl-script.sh 2021-12-19` to fetch transfer data and filter by game
 3. run `bash dynamo-scripts.sh 2021-12-19 prod` to upload transfer and user data
+
+
+run reset value from 12-16 to 01-21
+re run upload_user_transactions.py from 2022-01-22

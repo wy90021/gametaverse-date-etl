@@ -219,7 +219,7 @@ def upload_user_transfer(table_user_transfer, user, transfer, otherUser, role):
             'Timestamp': transfer.timestamp,
             'TransactionHash': transfer.info["transaction_hash"],
             'Role': role,
-            'Value': transfer.info["transaction_hash"],
+            'Value': transfer.info["value"],
             'OtherAddr': otherUser,
             'TokenAddress': transfer.token_address,
         }
