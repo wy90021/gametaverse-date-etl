@@ -92,7 +92,10 @@ def upload_user_transfer(table_user_transfer, user, transfer):
             'WalletAddress': user,
             'TransferID': transfer.transferID
         },
-        UpdateExpression="set Value=:v",
+        UpdateExpression="set #v=:v",
+        ExpressionAttributeNames={
+            '#v': "Value",
+        },
         ExpressionAttributeValues={
             ':v': transfer.info["value"],
         },
