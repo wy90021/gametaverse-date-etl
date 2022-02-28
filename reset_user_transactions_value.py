@@ -14,7 +14,6 @@ sea_token_addr = "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa"
 withdraw_reward = "0x2df5471b6e25b9dcad2d6169876a9e6a4f5ae882"
 nft_address = "0x416f1d70c1c22608814d9f36c492efb3ba8cad4c"
 game_wallet = "0x0000000000000000000000000000000000000000"
-transfer_topic = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
 
 class transfer:
     def __init__(self, row):

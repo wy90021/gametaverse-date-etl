@@ -13,8 +13,6 @@ auction_address = "0xd78be0b93a3c9d1a9323bca03184accf1a57e548"
 sea_token_addr = "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa"
 withdraw_reward = "0x2df5471b6e25b9dcad2d6169876a9e6a4f5ae882"
 
-transfer_topic = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
-
 class transaction:
     hash = ""
     block_number = ""
