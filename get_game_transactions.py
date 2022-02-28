@@ -37,25 +37,6 @@ class transaction:
             ', '.join('%s=%s' % item for item in vars(self).items())
         )
 
-
-class log:
-    transaction_hash = ""
-    block_number = 0
-    address  = ""
-    data = ""
-
-    def __init__(self, row):
-        self.transaction_hash = row[1]
-        self.block_number = row[4]
-        self.address = row[5]
-        self.data = row[6]
-        self.topics = row[7].split(',')
-    def __repr__(self):
-        return '%s(%s)' % (
-            type(self).__name__,
-            ', '.join('%s=%s' % item for item in vars(self).items())
-        )
-
 in_game_address = set([
     rent_address,
     withdrawl_final_address,
