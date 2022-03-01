@@ -174,6 +174,12 @@ def process(date):
                 else: 
                     print("unknown type tansfers" + transfer_log)
     update_existing_user(existing_user, new_user)
+    new_user = {}
+    existing_user = get_existing_users()
+    for user in existing_user:
+        if existing_user[user] == date:
+            new_user.append(user)
+
     generate_result(date, active_user, sea_volume, auction_shark_volume, create_shark_volume,rent_shark_volume,buy_shark_volume, user_actions, new_user)
 
 def set_default(obj):
@@ -182,6 +188,7 @@ def set_default(obj):
     raise TypeError
 def obj_dict(obj):
     return obj.__dict__
+
 def generate_result(date, active_user, sea_volume, auction_shark_volume, create_shark_volume,rent_shark_volume,buy_shark_volume, user_actions, new_user):
     script_dir = os.path.dirname(__file__)
     dir = os.path.join(script_dir, date)
@@ -204,7 +211,6 @@ def generate_result(date, active_user, sea_volume, auction_shark_volume, create_
         outfile.write(json.dumps(summary,default=set_default))
     with io.open(user_action_path, 'w') as outfile:
         outfile.write(json.dumps(user_actions, default=obj_dict))
-
 
 def update_existing_user(existing_user, new_user):
     script_dir = os.path.dirname(__file__)
@@ -235,7 +241,6 @@ def load_transactions(transaction_file_path):
             trans = transaction(row)
             transaction_map[trans.hash] = trans
     return transaction_map
-
 
 if __name__ == "__main__":
     args = sys.argv[1:]
