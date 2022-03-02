@@ -166,7 +166,7 @@ def process(date):
                     add_user_action(user_actions, transfer_log.from_address, action_auction_buy_sea, transfer_log.value, transfer_log.transaction_hash)
                     add_user_action(user_actions, transfer_log.to_address, action_auction_sell_sea, transfer_log.value, transfer_log.transaction_hash)
                 elif contract == generate_shark_contract:
-                    add_user_action(user_actions, transfer_log.to_address, action_buy_sea, transfer_log.value, transfer_log.transaction_hash)
+                    add_user_action(user_actions, transfer_log.from_address, action_buy_sea, transfer_log.value, transfer_log.transaction_hash)
                 elif contract == withdrawl_final_address:
                     add_user_action(user_actions, transfer_log.to_address, action_withdrawl_sea, transfer_log.value, transfer_log.transaction_hash)
                 else: 
