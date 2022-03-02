@@ -121,9 +121,9 @@ def getBlockTimestamp(block_file):
     return block_timestamp
 
 def process(date): 
-    transfer_file_path = "../starsharks/"+date+"/in-game-token-transfers.csv"
-    block_file_path = "../starsharks/"+date+"/blocks.csv"
-    transaction_file_path = "../starsharks/"+date+"/in-game-transaction.csv"
+    transfer_file_path = "rawdata/"+date+"/in-game-token-transfers.csv"
+    block_file_path = "rawdata/"+date+"/blocks.csv"
+    transaction_file_path = "rawdata/"+date+"/in-game-transaction.csv"
 
     block_timestamps = getBlockTimestamp(block_file_path)
     transaction_map = load_transactions(transaction_file_path)
@@ -161,8 +161,8 @@ def process(date):
                 if  contract == rent_contract: 
                     rent_shark_volume = rent_shark_volume + 1
                     # print("rent shark: " + transfer_log)
-                    add_user_action(user_actions, transfer_log.from_address, action_lend, transfer_log.value, transfer_log.transaction_hash)
-                    add_user_action(user_actions, transfer_log.to_address, action_rent, transfer_log.value, transfer_log.transaction_hash)
+                    add_user_action(user_actions, transfer_log.from_address, action_rent, transfer_log.value, transfer_log.transaction_hash)
+                    add_user_action(user_actions, transfer_log.to_address, action_lend, transfer_log.value, transfer_log.transaction_hash)
                 elif  contract == auction_contract: 
                     add_user_action(user_actions, transfer_log.from_address, action_auction_buy_sea, transfer_log.value, transfer_log.transaction_hash)
                     add_user_action(user_actions, transfer_log.to_address, action_auction_sell_sea, transfer_log.value, transfer_log.transaction_hash)
@@ -204,8 +204,10 @@ def obj_dict(obj):
     return obj.__dict__
 
 def generate_result(date, active_user, sea_volume, auction_shark_volume, create_shark_volume,rent_shark_volume,buy_shark_volume, user_actions, new_user):
-    script_dir = os.path.dirname(__file__)
-    dir = os.path.join(script_dir, date)
+    dir = os.path.join("preprocessed", date)
+
+    print(dir)
+
     summary_file_path = os.path.join(dir, summary_file)
     user_action_path = os.path.join(dir, user_action_file)
 
@@ -220,7 +222,7 @@ def generate_result(date, active_user, sea_volume, auction_shark_volume, create_
     }
 
     if not os.path.isdir(dir): 
-        os.mkdir(os.path.join(script_dir, date), 0o666)
+        os.mkdir(dir, 0o666)
     with io.open(summary_file_path, 'w') as outfile:
         outfile.write(json.dumps(summary,default=set_default))
     with io.open(user_action_path, 'w') as outfile:

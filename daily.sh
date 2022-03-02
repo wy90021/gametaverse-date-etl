@@ -5,6 +5,8 @@ then
 fi
 d=$1
 
-bash ~/gametaverse-date-etl/block-script.sh $d prod
-bash ~/gametaverse-date-etl/etl-script.sh $d
+bash block-script.sh $d
+bash etl-script.sh $d
+python3 daily-agg/process.py $3
+bash upload_s3.sh $d gametaverse-starsharks-daily preprocessed
 # bash ~/gametaverse-date-etl/dynamo-scripts.sh $d prod

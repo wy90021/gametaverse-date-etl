@@ -1,1 +1,4 @@
 *.csv
+preprocessed/*
+raw/*
+daily-agg/new_user_time.json
