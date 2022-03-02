@@ -8,7 +8,7 @@ rent_contract = "0xe9e092e46a75d192d9d7d3942f11f116fd2f7ca9"
 auction_contract = "0xd78be0b93a3c9d1a9323bca03184accf1a57e548"
 generate_shark_contract = "0x1f7acc330fe462a9468aa47ecdb543787577e1e7"
 mystery_box_contract = "0xf8dE3211D8652D665647e3DC6E0338713eAf7EbD"
-
+auction_sell_fee_contract = "0x0e3089db5f6a9f0a6550818d1dc274da9f73d4c8"
 sea_token = "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa"
 shark_nft = "0x416f1d70c1c22608814d9f36c492efb3ba8cad4c"
 
@@ -21,13 +21,17 @@ new_user_file = "new_user_time.json"
 summary_file = "summary.json"
 user_action_file = "user_actions.json"
 
-action_auction_buy = "auction_buy"
-action_auction_sell = "auction_sell"
-action_buy = "buy"
-action_lend = "lend_rent"
-action_rent = "rent_shark"
-action_breed = "breed"
-action_mystery_box = "mystery_box"
+action_auction_buy = "auction_buy_NFT"
+action_auction_sell = "auction_sell_NFT"
+action_auction_buy_sea = "auction_buy_SEA"
+action_auction_sell_sea = "auction_sell_SEA"
+action_buy = "buy_NFT"
+action_buy_sea = "buy_SEA"
+action_withdrawl_sea = "withdrawl_SEA"
+
+action_lend = "lend_rent_SEA"
+action_rent = "rent_shark_SEA"
+action_mystery_box = "mystery_box_NFT"
 
 in_game_address = set([
     rent_contract,
@@ -37,7 +41,8 @@ in_game_address = set([
     withdraw_reward,
     sea_token,
     game_wallet,
-    mystery_box_contract
+    mystery_box_contract,
+    auction_sell_fee_contract
 ])
 
 class transaction:
@@ -91,9 +96,11 @@ class transfer:
 class user_action:
     action = ""
     value = ""
-    def __init__(self, action, value):
+    trans_hash = ""
+    def __init__(self, action, value, hash):
         self.action = action
         self.value = value
+        self.trans_hash = hash
     def __repr__(self):
         return '%s(%s)' % (
             type(self).__name__,
@@ -114,9 +121,9 @@ def getBlockTimestamp(block_file):
     return block_timestamp
 
 def process(date): 
-    transfer_file_path = "../"+date+"/in-game-token-transfers.csv"
-    block_file_path = "../"+date+"/blocks.csv"
-    transaction_file_path = "../"+date+"/in-game-transaction.csv"
+    transfer_file_path = "../starsharks/"+date+"/in-game-token-transfers.csv"
+    block_file_path = "../starsharks/"+date+"/blocks.csv"
+    transaction_file_path = "../starsharks/"+date+"/in-game-transaction.csv"
 
     block_timestamps = getBlockTimestamp(block_file_path)
     transaction_map = load_transactions(transaction_file_path)
@@ -154,8 +161,15 @@ def process(date):
                 if  contract == rent_contract: 
                     rent_shark_volume = rent_shark_volume + 1
                     # print("rent shark: " + transfer_log)
-                    add_user_action(user_actions, transfer_log.from_address, action_lend, transfer_log.value)
-                    add_user_action(user_actions, transfer_log.to_address, action_rent, transfer_log.value)
+                    add_user_action(user_actions, transfer_log.from_address, action_lend, transfer_log.value, transfer_log.transaction_hash)
+                    add_user_action(user_actions, transfer_log.to_address, action_rent, transfer_log.value, transfer_log.transaction_hash)
+                elif  contract == auction_contract: 
+                    add_user_action(user_actions, transfer_log.from_address, action_auction_buy_sea, transfer_log.value, transfer_log.transaction_hash)
+                    add_user_action(user_actions, transfer_log.to_address, action_auction_sell_sea, transfer_log.value, transfer_log.transaction_hash)
+                elif contract == generate_shark_contract:
+                    add_user_action(user_actions, transfer_log.to_address, action_buy_sea, transfer_log.value, transfer_log.transaction_hash)
+                elif contract == withdrawl_final_address:
+                    add_user_action(user_actions, transfer_log.to_address, action_withdrawl_sea, transfer_log.value, transfer_log.transaction_hash)
             if transfer_log.token_address == shark_nft:
                 trans = transaction_map[transfer_log.transaction_hash]
                 if trans is None:
@@ -163,22 +177,22 @@ def process(date):
                 contract = trans.to_address
                 if  contract == auction_contract: 
                     auction_shark_volume = auction_shark_volume + 1
-                    add_user_action(user_actions, transfer_log.from_address, action_auction_sell, transfer_log.value)
-                    add_user_action(user_actions, transfer_log.to_address, action_auction_buy, transfer_log.value)
+                    add_user_action(user_actions, transfer_log.from_address, action_auction_sell, transfer_log.value, transfer_log.transaction_hash)
+                    add_user_action(user_actions, transfer_log.to_address, action_auction_buy, transfer_log.value, transfer_log.transaction_hash)
                 elif contract == generate_shark_contract:
                     create_shark_volume = create_shark_volume + 1
-                    add_user_action(user_actions, transfer_log.to_address, action_buy, transfer_log.value)
+                    add_user_action(user_actions, transfer_log.to_address, action_buy, transfer_log.value, transfer_log.transaction_hash)
                 elif contract == mystery_box_contract:
                     buy_shark_volume = buy_shark_volume + 1
-                    add_user_action(user_actions, transfer_log.to_address, action_mystery_box, transfer_log.value)
+                    add_user_action(user_actions, transfer_log.to_address, action_mystery_box, transfer_log.value, transfer_log.transaction_hash)
                 else: 
                     print("unknown type tansfers" + transfer_log)
     update_existing_user(existing_user, new_user)
-    new_user = {}
+    new_user = set()
     existing_user = get_existing_users()
     for user in existing_user:
         if existing_user[user] == date:
-            new_user.append(user)
+            new_user.add(user)
 
     generate_result(date, active_user, sea_volume, auction_shark_volume, create_shark_volume,rent_shark_volume,buy_shark_volume, user_actions, new_user)
 
@@ -219,11 +233,13 @@ def update_existing_user(existing_user, new_user):
     with open(file_path, 'w') as outfile:
         json.dump(existing_user, outfile)
 
-def add_user_action(user_actions, user_addr, action, value):
+def add_user_action(user_actions, user_addr, action, value, trans_hash):
+    if user_addr in in_game_address:
+        return
     if user_addr in user_actions:
-        user_actions[user_addr].append(user_action(action, value))
+        user_actions[user_addr].append(user_action(action, value, trans_hash))
     else:
-        user_actions[user_addr] = [user_action(action, value)]
+        user_actions[user_addr] = [user_action(action, value,trans_hash)]
 
 def get_existing_users(): 
     script_dir = os.path.dirname(__file__)
