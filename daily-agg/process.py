@@ -110,7 +110,6 @@ class user_action:
         return json.dumps(self, default=lambda o: o.__dict__, 
             sort_keys=True, indent=4)
 
-
 def getBlockTimestamp(block_file): 
     block_timestamp = {}
     with open(block_file, "r") as csv_file:
@@ -170,6 +169,10 @@ def process(date):
                     add_user_action(user_actions, transfer_log.to_address, action_buy_sea, transfer_log.value, transfer_log.transaction_hash)
                 elif contract == withdrawl_final_address:
                     add_user_action(user_actions, transfer_log.to_address, action_withdrawl_sea, transfer_log.value, transfer_log.transaction_hash)
+                else: 
+                    if contract != sea_token:
+                        print("unknown type tansfers")
+                        print(transfer_log)
             if transfer_log.token_address == shark_nft:
                 trans = transaction_map[transfer_log.transaction_hash]
                 if trans is None:
