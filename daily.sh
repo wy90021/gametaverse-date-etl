@@ -4,7 +4,7 @@
 #      exit 0
 #fi
 #d=$1
-d=$(date +%F)
+d=$(date  --date="yesterday" +"%Y-%m-%d")
 
 bash block-script.sh $d &&
 bash etl-script.sh $d &&
