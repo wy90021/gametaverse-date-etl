@@ -22,6 +22,6 @@ bucket=$2
 local_folder=$3
 while [ "$d" != $today ]; do 
   echo $d
-  aws s3 cp $local_folder/$d s3://$bucket/$d --recursive --profile bo-s3
+  aws s3 cp $local_folder/$d s3://$bucket/$d --recursive --profile default
   d=$(date -I -d "$d + 1 day")
 done
