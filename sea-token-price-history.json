@@ -7,7 +7,7 @@
     "erc20"
   ],
   "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png",
-  "update_at": "2022-03-08T03:31:18.072034566Z",
+  "update_at": "2022-03-10T04:17:16.640116473Z",
   "quote_currency": "USD",
   "prices": [
     {
@@ -21,8 +21,36 @@
         ],
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
+      "date": "2022-03-09",
+      "price": 1.4089013
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-08",
+      "price": 1.3418155
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
       "date": "2022-03-07",
-      "price": 1.2448862
+      "price": 1.2520882
     },
     {
       "contract_metadata": {
@@ -1171,8 +1199,36 @@
         ],
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
+      "date": "2022-03-09",
+      "price": 1.4089013
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-08",
+      "price": 1.3418155
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
       "date": "2022-03-07",
-      "price": 1.2448862
+      "price": 1.2520882
     },
     {
       "contract_metadata": {
