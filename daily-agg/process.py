@@ -13,6 +13,7 @@ sea_token = "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa"
 shark_nft = "0x416f1d70c1c22608814d9f36c492efb3ba8cad4c"
 
 withdrawl_final_address = "0x94019518f82762bb94280211d19d4ac025d98583"  
+withdrawl_final_address_new = "0x4a7634c4dd3ae3e3e72f09089807db2f04746741"
 withdraw_reward = "0x2df5471b6e25b9dcad2d6169876a9e6a4f5ae882" # SSS token
 
 game_wallet = "0x0000000000000000000000000000000000000000"
@@ -167,7 +168,7 @@ def process(date):
                     add_user_action(user_actions, transfer_log.to_address, action_auction_sell_sea, transfer_log.value, transfer_log.transaction_hash)
                 elif contract == generate_shark_contract:
                     add_user_action(user_actions, transfer_log.from_address, action_buy_sea, transfer_log.value, transfer_log.transaction_hash)
-                elif contract == withdrawl_final_address:
+                elif contract == withdrawl_final_address or contract == withdrawl_final_address_new:
                     add_user_action(user_actions, transfer_log.to_address, action_withdrawl_sea, transfer_log.value, transfer_log.transaction_hash)
                 else: 
                     if contract != sea_token:

@@ -8,8 +8,7 @@ today=$(date +"%Y-%m-%d")
 echo "today: $today"
 while [ "$d" != $today ]; do 
   echo $d
-  bash etl-script.sh $d
-  # bash dynamo-scripts.sh $d prod
+  bash daily.sh $d
   d=$(date -I -d "$d + 1 day")
 done
 

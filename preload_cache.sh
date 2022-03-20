@@ -1,6 +1,12 @@
-d=$(date --date="yesterday" +"%Y-%m-%d")
-d7=$(date --date="8 days ago" +"%Y-%m-%d")
-d31=$(date --date="31 days ago" +"%Y-%m-%d")
+if [ -z "$1" ]
+then
+    d=$(date --date="yesterday" +"%Y-%m-%d")
+else
+    d=$1
+fi
+echo $d
+d7=$(date --date="${d} -8 day" +"%Y-%m-%d")
+d31=$(date --date="${d} -31 day" +"%Y-%m-%d")
 dorigin='2021-12-16'
 echo $d
 echo $d7
