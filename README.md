@@ -24,3 +24,7 @@ pip3 install boto3
 1. run `bash block-script.sh 2021-12-19` to fetch block data and upload to dynamo
 2. run `bash etl-script.sh 2021-12-19` to fetch transfer data and filter by game
 3. run `bash dynamo-scripts.sh 2021-12-19 prod` to upload transfer and user data
+
+# How to clear cache for a day
+aws s3 --recursive rm s3://gametaverse-daily --exclude "*" --include "starsharks/cache/*2022-03-21*/*" --profile xxx
+aws s3 --recursive rm s3://gametaverse-daily-starsharks --exclude "*" --include "cache/*2022-03-21*/*" --profile xxx
