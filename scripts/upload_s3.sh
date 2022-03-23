@@ -20,4 +20,4 @@ echo "today: $today"
 d=$1
 bucket=$2
 local_folder=$3
-aws s3 cp $local_folder/$d s3://$bucket/$d --recursive --profile default
+aws s3 cp $local_folder/$d s3://$bucket/$d --recursive --profile prod

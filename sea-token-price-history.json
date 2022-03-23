@@ -7,7 +7,7 @@
     "erc20"
   ],
   "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png",
-  "update_at": "2022-03-10T04:17:16.640116473Z",
+  "update_at": "2022-03-23T04:06:28.798349308Z",
   "quote_currency": "USD",
   "prices": [
     {
@@ -21,8 +21,190 @@
         ],
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
+      "date": "2022-03-22",
+      "price": 1.0991919
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-21",
+      "price": 1.03704
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-20",
+      "price": 1.057553
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-19",
+      "price": 1.1433502
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-18",
+      "price": 1.0235877
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-17",
+      "price": 0.96903926
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-16",
+      "price": 0.8913902
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-15",
+      "price": 0.9034364
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-14",
+      "price": 0.9056298
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-13",
+      "price": 0.9536109
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-12",
+      "price": 1.1635915
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-11",
+      "price": 1.134916
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-10",
+      "price": 1.3729177
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
       "date": "2022-03-09",
-      "price": 1.4089013
+      "price": 1.3721154
     },
     {
       "contract_metadata": {
@@ -36,7 +218,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-08",
-      "price": 1.3418155
+      "price": 1.4225222
     },
     {
       "contract_metadata": {
@@ -50,7 +232,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-07",
-      "price": 1.2520882
+      "price": 1.2181756
     },
     {
       "contract_metadata": {
@@ -64,7 +246,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-06",
-      "price": 1.2158595
+      "price": 1.2116654
     },
     {
       "contract_metadata": {
@@ -78,7 +260,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-05",
-      "price": 1.5064676
+      "price": 1.447411
     },
     {
       "contract_metadata": {
@@ -92,7 +274,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-04",
-      "price": 1.93296
+      "price": 1.6111654
     },
     {
       "contract_metadata": {
@@ -106,7 +288,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-03",
-      "price": 2.0714912
+      "price": 1.5954174
     },
     {
       "contract_metadata": {
@@ -120,7 +302,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-02",
-      "price": 1.9651138
+      "price": 1.9409672
     },
     {
       "contract_metadata": {
@@ -134,7 +316,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-01",
-      "price": 1.7367967
+      "price": 1.5954075
     },
     {
       "contract_metadata": {
@@ -148,7 +330,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-28",
-      "price": 1.4399387
+      "price": 1.5070951
     },
     {
       "contract_metadata": {
@@ -162,7 +344,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-27",
-      "price": 1.6320161
+      "price": 1.6268448
     },
     {
       "contract_metadata": {
@@ -176,7 +358,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-26",
-      "price": 1.674082
+      "price": 1.6728209
     },
     {
       "contract_metadata": {
@@ -190,7 +372,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-25",
-      "price": 1.5771171
+      "price": 1.5749689
     },
     {
       "contract_metadata": {
@@ -204,7 +386,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-24",
-      "price": 1.4922757
+      "price": 1.3479892
     },
     {
       "contract_metadata": {
@@ -218,7 +400,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-23",
-      "price": 1.5035852
+      "price": 1.5678445
     },
     {
       "contract_metadata": {
@@ -232,7 +414,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-22",
-      "price": 1.4457098
+      "price": 1.4641315
     },
     {
       "contract_metadata": {
@@ -246,7 +428,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-21",
-      "price": 1.517837
+      "price": 1.5496955
     },
     {
       "contract_metadata": {
@@ -260,7 +442,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-20",
-      "price": 1.4999937
+      "price": 1.4444917
     },
     {
       "contract_metadata": {
@@ -274,7 +456,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-19",
-      "price": 1.4342303
+      "price": 1.3768978
     },
     {
       "contract_metadata": {
@@ -288,7 +470,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-18",
-      "price": 1.3061283
+      "price": 1.264589
     },
     {
       "contract_metadata": {
@@ -302,7 +484,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-17",
-      "price": 1.3985686
+      "price": 1.4201238
     },
     {
       "contract_metadata": {
@@ -316,7 +498,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-16",
-      "price": 1.4972514
+      "price": 1.4057168
     },
     {
       "contract_metadata": {
@@ -330,7 +512,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-15",
-      "price": 1.2351236
+      "price": 1.2732325
     },
     {
       "contract_metadata": {
@@ -344,7 +526,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-14",
-      "price": 1.2636328
+      "price": 1.1439725
     },
     {
       "contract_metadata": {
@@ -358,7 +540,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-13",
-      "price": 1.3221508
+      "price": 1.3144315
     },
     {
       "contract_metadata": {
@@ -372,7 +554,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-12",
-      "price": 1.1630037
+      "price": 1.1530188
     },
     {
       "contract_metadata": {
@@ -386,7 +568,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-11",
-      "price": 1.1120813
+      "price": 1.1293631
     },
     {
       "contract_metadata": {
@@ -400,7 +582,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-10",
-      "price": 1.0199418
+      "price": 1.0147038
     },
     {
       "contract_metadata": {
@@ -414,7 +596,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-09",
-      "price": 0.9839877
+      "price": 0.9585087
     },
     {
       "contract_metadata": {
@@ -428,7 +610,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-08",
-      "price": 0.9506716
+      "price": 1.0270603
     },
     {
       "contract_metadata": {
@@ -442,7 +624,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-07",
-      "price": 0.92596686
+      "price": 0.92204934
     },
     {
       "contract_metadata": {
@@ -456,7 +638,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-06",
-      "price": 0.94398147
+      "price": 0.92578655
     },
     {
       "contract_metadata": {
@@ -470,7 +652,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-05",
-      "price": 0.9551644
+      "price": 0.9257865
     },
     {
       "contract_metadata": {
@@ -484,7 +666,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-04",
-      "price": 0.83181226
+      "price": 0.90993804
     },
     {
       "contract_metadata": {
@@ -498,7 +680,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-03",
-      "price": 0.9101625
+      "price": 0.917124
     },
     {
       "contract_metadata": {
@@ -512,7 +694,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-02",
-      "price": 0.9127176
+      "price": 0.9158068
     },
     {
       "contract_metadata": {
@@ -526,7 +708,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-01",
-      "price": 0.8620779
+      "price": 0.8491449
     },
     {
       "contract_metadata": {
@@ -540,7 +722,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-31",
-      "price": 0.8431109
+      "price": 0.8559783
     },
     {
       "contract_metadata": {
@@ -554,7 +736,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-30",
-      "price": 0.92615086
+      "price": 0.94742054
     },
     {
       "contract_metadata": {
@@ -568,7 +750,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-29",
-      "price": 0.96926266
+      "price": 0.9945188
     },
     {
       "contract_metadata": {
@@ -582,7 +764,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-28",
-      "price": 0.92734265
+      "price": 1.414477
     },
     {
       "contract_metadata": {
@@ -596,7 +778,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-27",
-      "price": 0.9672716
+      "price": 1.4144771
     },
     {
       "contract_metadata": {
@@ -610,7 +792,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-26",
-      "price": 0.8981324
+      "price": 1.414477
     },
     {
       "contract_metadata": {
@@ -624,7 +806,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-25",
-      "price": 0.8751025
+      "price": 1.4144771
     },
     {
       "contract_metadata": {
@@ -638,7 +820,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-24",
-      "price": 0.8727933
+      "price": 1.414477
     },
     {
       "contract_metadata": {
@@ -652,7 +834,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-23",
-      "price": 0.8701817
+      "price": 1.4144769
     },
     {
       "contract_metadata": {
@@ -666,7 +848,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-22",
-      "price": 0.79146045
+      "price": 1.414477
     },
     {
       "contract_metadata": {
@@ -680,7 +862,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-21",
-      "price": 0.97176903
+      "price": 1.4144769
     },
     {
       "contract_metadata": {
@@ -694,7 +876,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-20",
-      "price": 1.054663
+      "price": 1.414477
     },
     {
       "contract_metadata": {
@@ -708,7 +890,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-19",
-      "price": 1.3005571
+      "price": 1.414477
     },
     {
       "contract_metadata": {
@@ -722,7 +904,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-18",
-      "price": 1.3934604
+      "price": 1.4144769
     },
     {
       "contract_metadata": {
@@ -736,7 +918,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-17",
-      "price": 1.5533876
+      "price": 1.5984617
     },
     {
       "contract_metadata": {
@@ -750,7 +932,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-16",
-      "price": 1.6543564
+      "price": 1.6339699
     },
     {
       "contract_metadata": {
@@ -764,7 +946,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-15",
-      "price": 1.773385
+      "price": 1.7997726
     },
     {
       "contract_metadata": {
@@ -778,7 +960,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-14",
-      "price": 1.8105146
+      "price": 1.7802461
     },
     {
       "contract_metadata": {
@@ -792,7 +974,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-13",
-      "price": 1.7775021
+      "price": 1.7547103
     },
     {
       "contract_metadata": {
@@ -806,7 +988,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-12",
-      "price": 1.6780622
+      "price": 1.636887
     },
     {
       "contract_metadata": {
@@ -820,7 +1002,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-11",
-      "price": 1.6520495
+      "price": 5.762059
     },
     {
       "contract_metadata": {
@@ -834,7 +1016,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-10",
-      "price": 1.6867614
+      "price": 1.8576669
     },
     {
       "contract_metadata": {
@@ -848,7 +1030,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-09",
-      "price": 1.8265067
+      "price": 1.8576667
     },
     {
       "contract_metadata": {
@@ -862,7 +1044,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-08",
-      "price": 1.7351911
+      "price": 1.857667
     },
     {
       "contract_metadata": {
@@ -876,7 +1058,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-07",
-      "price": 1.5516869
+      "price": 1.8576669
     },
     {
       "contract_metadata": {
@@ -890,7 +1072,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-06",
-      "price": 1.3349259
+      "price": 1.3225672
     },
     {
       "contract_metadata": {
@@ -904,7 +1086,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-05",
-      "price": 1.1534605
+      "price": 1.1651261
     },
     {
       "contract_metadata": {
@@ -918,7 +1100,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-04",
-      "price": 1.1666819
+      "price": 1.1598725
     },
     {
       "contract_metadata": {
@@ -932,7 +1114,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-03",
-      "price": 1.0799545
+      "price": 1.0962676
     },
     {
       "contract_metadata": {
@@ -946,7 +1128,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-02",
-      "price": 1.2157773
+      "price": 1.1547356
     },
     {
       "contract_metadata": {
@@ -960,7 +1142,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-01",
-      "price": 1.1342577
+      "price": 1.1256311
     },
     {
       "contract_metadata": {
@@ -974,7 +1156,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-31",
-      "price": 0.904482
+      "price": 0.90084517
     },
     {
       "contract_metadata": {
@@ -988,7 +1170,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-30",
-      "price": 0.8699761
+      "price": 1.1762564
     },
     {
       "contract_metadata": {
@@ -1002,7 +1184,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-29",
-      "price": 0.84081435
+      "price": 1.1762564
     },
     {
       "contract_metadata": {
@@ -1016,7 +1198,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-28",
-      "price": 0.81460017
+      "price": 1.1762564
     },
     {
       "contract_metadata": {
@@ -1030,7 +1212,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-27",
-      "price": 0.78607905
+      "price": 1.1762564
     },
     {
       "contract_metadata": {
@@ -1044,7 +1226,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-26",
-      "price": 0.76581776
+      "price": 1.1762563
     },
     {
       "contract_metadata": {
@@ -1058,7 +1240,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-25",
-      "price": 0.95775527
+      "price": 1.1762564
     },
     {
       "contract_metadata": {
@@ -1072,7 +1254,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-24",
-      "price": 1.1859751
+      "price": 1.1762563
     },
     {
       "contract_metadata": {
@@ -1086,7 +1268,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-23",
-      "price": 1.1252248
+      "price": 1.1540723
     },
     {
       "contract_metadata": {
@@ -1100,7 +1282,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-22",
-      "price": 1.0520722
+      "price": 1.1540723
     },
     {
       "contract_metadata": {
@@ -1114,7 +1296,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-21",
-      "price": 0.9451914
+      "price": 1.1540723
     },
     {
       "contract_metadata": {
@@ -1128,7 +1310,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-20",
-      "price": 0.99156386
+      "price": 1.0059963
     },
     {
       "contract_metadata": {
@@ -1142,7 +1324,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-19",
-      "price": 1.1655463
+      "price": 1.1875128
     },
     {
       "contract_metadata": {
@@ -1156,7 +1338,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-18",
-      "price": 0.8957701
+      "price": 0.8917443
     },
     {
       "contract_metadata": {
@@ -1170,21 +1352,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-17",
-      "price": 0.86012983
-    },
-    {
-      "contract_metadata": {
-        "contract_decimals": 18,
-        "contract_name": "SharkShakeSea",
-        "contract_ticker_symbol": "SEA",
-        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
-        "supports_erc": [
-          "erc20"
-        ],
-        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
-      },
-      "date": "2021-12-16",
-      "price": 0.8825342
+      "price": 1.2318351
     }
   ],
   "items": [
@@ -1199,8 +1367,190 @@
         ],
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
+      "date": "2022-03-22",
+      "price": 1.0991919
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-21",
+      "price": 1.03704
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-20",
+      "price": 1.057553
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-19",
+      "price": 1.1433502
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-18",
+      "price": 1.0235877
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-17",
+      "price": 0.96903926
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-16",
+      "price": 0.8913902
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-15",
+      "price": 0.9034364
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-14",
+      "price": 0.9056298
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-13",
+      "price": 0.9536109
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-12",
+      "price": 1.1635915
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-11",
+      "price": 1.134916
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
+      "date": "2022-03-10",
+      "price": 1.3729177
+    },
+    {
+      "contract_metadata": {
+        "contract_decimals": 18,
+        "contract_name": "SharkShakeSea",
+        "contract_ticker_symbol": "SEA",
+        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
+        "supports_erc": [
+          "erc20"
+        ],
+        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
+      },
       "date": "2022-03-09",
-      "price": 1.4089013
+      "price": 1.3721154
     },
     {
       "contract_metadata": {
@@ -1214,7 +1564,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-08",
-      "price": 1.3418155
+      "price": 1.4225222
     },
     {
       "contract_metadata": {
@@ -1228,7 +1578,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-07",
-      "price": 1.2520882
+      "price": 1.2181756
     },
     {
       "contract_metadata": {
@@ -1242,7 +1592,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-06",
-      "price": 1.2158595
+      "price": 1.2116654
     },
     {
       "contract_metadata": {
@@ -1256,7 +1606,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-05",
-      "price": 1.5064676
+      "price": 1.447411
     },
     {
       "contract_metadata": {
@@ -1270,7 +1620,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-04",
-      "price": 1.93296
+      "price": 1.6111654
     },
     {
       "contract_metadata": {
@@ -1284,7 +1634,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-03",
-      "price": 2.0714912
+      "price": 1.5954174
     },
     {
       "contract_metadata": {
@@ -1298,7 +1648,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-02",
-      "price": 1.9651138
+      "price": 1.9409672
     },
     {
       "contract_metadata": {
@@ -1312,7 +1662,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-03-01",
-      "price": 1.7367967
+      "price": 1.5954075
     },
     {
       "contract_metadata": {
@@ -1326,7 +1676,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-28",
-      "price": 1.4399387
+      "price": 1.5070951
     },
     {
       "contract_metadata": {
@@ -1340,7 +1690,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-27",
-      "price": 1.6320161
+      "price": 1.6268448
     },
     {
       "contract_metadata": {
@@ -1354,7 +1704,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-26",
-      "price": 1.674082
+      "price": 1.6728209
     },
     {
       "contract_metadata": {
@@ -1368,7 +1718,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-25",
-      "price": 1.5771171
+      "price": 1.5749689
     },
     {
       "contract_metadata": {
@@ -1382,7 +1732,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-24",
-      "price": 1.4922757
+      "price": 1.3479892
     },
     {
       "contract_metadata": {
@@ -1396,7 +1746,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-23",
-      "price": 1.5035852
+      "price": 1.5678445
     },
     {
       "contract_metadata": {
@@ -1410,7 +1760,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-22",
-      "price": 1.4457098
+      "price": 1.4641315
     },
     {
       "contract_metadata": {
@@ -1424,7 +1774,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-21",
-      "price": 1.517837
+      "price": 1.5496955
     },
     {
       "contract_metadata": {
@@ -1438,7 +1788,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-20",
-      "price": 1.4999937
+      "price": 1.4444917
     },
     {
       "contract_metadata": {
@@ -1452,7 +1802,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-19",
-      "price": 1.4342303
+      "price": 1.3768978
     },
     {
       "contract_metadata": {
@@ -1466,7 +1816,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-18",
-      "price": 1.3061283
+      "price": 1.264589
     },
     {
       "contract_metadata": {
@@ -1480,7 +1830,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-17",
-      "price": 1.3985686
+      "price": 1.4201238
     },
     {
       "contract_metadata": {
@@ -1494,7 +1844,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-16",
-      "price": 1.4972514
+      "price": 1.4057168
     },
     {
       "contract_metadata": {
@@ -1508,7 +1858,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-15",
-      "price": 1.2351236
+      "price": 1.2732325
     },
     {
       "contract_metadata": {
@@ -1522,7 +1872,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-14",
-      "price": 1.2636328
+      "price": 1.1439725
     },
     {
       "contract_metadata": {
@@ -1536,7 +1886,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-13",
-      "price": 1.3221508
+      "price": 1.3144315
     },
     {
       "contract_metadata": {
@@ -1550,7 +1900,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-12",
-      "price": 1.1630037
+      "price": 1.1530188
     },
     {
       "contract_metadata": {
@@ -1564,7 +1914,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-11",
-      "price": 1.1120813
+      "price": 1.1293631
     },
     {
       "contract_metadata": {
@@ -1578,7 +1928,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-10",
-      "price": 1.0199418
+      "price": 1.0147038
     },
     {
       "contract_metadata": {
@@ -1592,7 +1942,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-09",
-      "price": 0.9839877
+      "price": 0.9585087
     },
     {
       "contract_metadata": {
@@ -1606,7 +1956,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-08",
-      "price": 0.9506716
+      "price": 1.0270603
     },
     {
       "contract_metadata": {
@@ -1620,7 +1970,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-07",
-      "price": 0.92596686
+      "price": 0.92204934
     },
     {
       "contract_metadata": {
@@ -1634,7 +1984,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-06",
-      "price": 0.94398147
+      "price": 0.92578655
     },
     {
       "contract_metadata": {
@@ -1648,7 +1998,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-05",
-      "price": 0.9551644
+      "price": 0.9257865
     },
     {
       "contract_metadata": {
@@ -1662,7 +2012,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-04",
-      "price": 0.83181226
+      "price": 0.90993804
     },
     {
       "contract_metadata": {
@@ -1676,7 +2026,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-03",
-      "price": 0.9101625
+      "price": 0.917124
     },
     {
       "contract_metadata": {
@@ -1690,7 +2040,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-02",
-      "price": 0.9127176
+      "price": 0.9158068
     },
     {
       "contract_metadata": {
@@ -1704,7 +2054,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-02-01",
-      "price": 0.8620779
+      "price": 0.8491449
     },
     {
       "contract_metadata": {
@@ -1718,7 +2068,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-31",
-      "price": 0.8431109
+      "price": 0.8559783
     },
     {
       "contract_metadata": {
@@ -1732,7 +2082,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-30",
-      "price": 0.92615086
+      "price": 0.94742054
     },
     {
       "contract_metadata": {
@@ -1746,7 +2096,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-29",
-      "price": 0.96926266
+      "price": 0.9945188
     },
     {
       "contract_metadata": {
@@ -1760,7 +2110,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-28",
-      "price": 0.92734265
+      "price": 1.414477
     },
     {
       "contract_metadata": {
@@ -1774,7 +2124,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-27",
-      "price": 0.9672716
+      "price": 1.4144771
     },
     {
       "contract_metadata": {
@@ -1788,7 +2138,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-26",
-      "price": 0.8981324
+      "price": 1.414477
     },
     {
       "contract_metadata": {
@@ -1802,7 +2152,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-25",
-      "price": 0.8751025
+      "price": 1.4144771
     },
     {
       "contract_metadata": {
@@ -1816,7 +2166,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-24",
-      "price": 0.8727933
+      "price": 1.414477
     },
     {
       "contract_metadata": {
@@ -1830,7 +2180,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-23",
-      "price": 0.8701817
+      "price": 1.4144769
     },
     {
       "contract_metadata": {
@@ -1844,7 +2194,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-22",
-      "price": 0.79146045
+      "price": 1.414477
     },
     {
       "contract_metadata": {
@@ -1858,7 +2208,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-21",
-      "price": 0.97176903
+      "price": 1.4144769
     },
     {
       "contract_metadata": {
@@ -1872,7 +2222,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-20",
-      "price": 1.054663
+      "price": 1.414477
     },
     {
       "contract_metadata": {
@@ -1886,7 +2236,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-19",
-      "price": 1.3005571
+      "price": 1.414477
     },
     {
       "contract_metadata": {
@@ -1900,7 +2250,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-18",
-      "price": 1.3934604
+      "price": 1.4144769
     },
     {
       "contract_metadata": {
@@ -1914,7 +2264,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-17",
-      "price": 1.5533876
+      "price": 1.5984617
     },
     {
       "contract_metadata": {
@@ -1928,7 +2278,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-16",
-      "price": 1.6543564
+      "price": 1.6339699
     },
     {
       "contract_metadata": {
@@ -1942,7 +2292,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-15",
-      "price": 1.773385
+      "price": 1.7997726
     },
     {
       "contract_metadata": {
@@ -1956,7 +2306,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-14",
-      "price": 1.8105146
+      "price": 1.7802461
     },
     {
       "contract_metadata": {
@@ -1970,7 +2320,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-13",
-      "price": 1.7775021
+      "price": 1.7547103
     },
     {
       "contract_metadata": {
@@ -1984,7 +2334,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-12",
-      "price": 1.6780622
+      "price": 1.636887
     },
     {
       "contract_metadata": {
@@ -1998,7 +2348,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-11",
-      "price": 1.6520495
+      "price": 5.762059
     },
     {
       "contract_metadata": {
@@ -2012,7 +2362,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-10",
-      "price": 1.6867614
+      "price": 1.8576669
     },
     {
       "contract_metadata": {
@@ -2026,7 +2376,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-09",
-      "price": 1.8265067
+      "price": 1.8576667
     },
     {
       "contract_metadata": {
@@ -2040,7 +2390,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-08",
-      "price": 1.7351911
+      "price": 1.857667
     },
     {
       "contract_metadata": {
@@ -2054,7 +2404,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-07",
-      "price": 1.5516869
+      "price": 1.8576669
     },
     {
       "contract_metadata": {
@@ -2068,7 +2418,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-06",
-      "price": 1.3349259
+      "price": 1.3225672
     },
     {
       "contract_metadata": {
@@ -2082,7 +2432,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-05",
-      "price": 1.1534605
+      "price": 1.1651261
     },
     {
       "contract_metadata": {
@@ -2096,7 +2446,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-04",
-      "price": 1.1666819
+      "price": 1.1598725
     },
     {
       "contract_metadata": {
@@ -2110,7 +2460,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-03",
-      "price": 1.0799545
+      "price": 1.0962676
     },
     {
       "contract_metadata": {
@@ -2124,7 +2474,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-02",
-      "price": 1.2157773
+      "price": 1.1547356
     },
     {
       "contract_metadata": {
@@ -2138,7 +2488,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2022-01-01",
-      "price": 1.1342577
+      "price": 1.1256311
     },
     {
       "contract_metadata": {
@@ -2152,7 +2502,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-31",
-      "price": 0.904482
+      "price": 0.90084517
     },
     {
       "contract_metadata": {
@@ -2166,7 +2516,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-30",
-      "price": 0.8699761
+      "price": 1.1762564
     },
     {
       "contract_metadata": {
@@ -2180,7 +2530,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-29",
-      "price": 0.84081435
+      "price": 1.1762564
     },
     {
       "contract_metadata": {
@@ -2194,7 +2544,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-28",
-      "price": 0.81460017
+      "price": 1.1762564
     },
     {
       "contract_metadata": {
@@ -2208,7 +2558,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-27",
-      "price": 0.78607905
+      "price": 1.1762564
     },
     {
       "contract_metadata": {
@@ -2222,7 +2572,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-26",
-      "price": 0.76581776
+      "price": 1.1762563
     },
     {
       "contract_metadata": {
@@ -2236,7 +2586,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-25",
-      "price": 0.95775527
+      "price": 1.1762564
     },
     {
       "contract_metadata": {
@@ -2250,7 +2600,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-24",
-      "price": 1.1859751
+      "price": 1.1762563
     },
     {
       "contract_metadata": {
@@ -2264,7 +2614,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-23",
-      "price": 1.1252248
+      "price": 1.1540723
     },
     {
       "contract_metadata": {
@@ -2278,7 +2628,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-22",
-      "price": 1.0520722
+      "price": 1.1540723
     },
     {
       "contract_metadata": {
@@ -2292,7 +2642,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-21",
-      "price": 0.9451914
+      "price": 1.1540723
     },
     {
       "contract_metadata": {
@@ -2306,7 +2656,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-20",
-      "price": 0.99156386
+      "price": 1.0059963
     },
     {
       "contract_metadata": {
@@ -2320,7 +2670,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-19",
-      "price": 1.1655463
+      "price": 1.1875128
     },
     {
       "contract_metadata": {
@@ -2334,7 +2684,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-18",
-      "price": 0.8957701
+      "price": 0.8917443
     },
     {
       "contract_metadata": {
@@ -2348,21 +2698,7 @@
         "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
       },
       "date": "2021-12-17",
-      "price": 0.86012983
-    },
-    {
-      "contract_metadata": {
-        "contract_decimals": 18,
-        "contract_name": "SharkShakeSea",
-        "contract_ticker_symbol": "SEA",
-        "contract_address": "0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa",
-        "supports_erc": [
-          "erc20"
-        ],
-        "logo_url": "https://logos.covalenthq.com/tokens/0x26193c7fa4354ae49ec53ea2cebc513dc39a10aa.png"
-      },
-      "date": "2021-12-16",
-      "price": 0.8825342
+      "price": 1.2318351
     }
   ]
 }
