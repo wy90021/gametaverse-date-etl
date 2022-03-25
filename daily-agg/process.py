@@ -226,6 +226,7 @@ def generate_result(date, active_user, sea_volume, auction_shark_volume, create_
     }
 
     if not os.path.isdir(dir): 
+        os.umask(0)
         os.mkdir(dir, 0o666)
     with io.open(summary_file_path, 'w') as outfile:
         outfile.write(json.dumps(summary,default=set_default))

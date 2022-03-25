@@ -26,5 +26,5 @@ pip3 install boto3
 3. run `bash dynamo-scripts.sh 2021-12-19 prod` to upload transfer and user data
 
 # How to clear cache for a day
-aws s3 --recursive rm s3://gametaverse-daily --exclude "*" --include "starsharks/cache/*2022-03-21*/*" --profile xxx
-aws s3 --recursive rm s3://gametaverse-daily-starsharks --exclude "*" --include "cache/*2022-03-21*/*" --profile xxx
+aws s3 --recursive rm s3://gametaverse-daily --exclude "*" --include "starsharks/cache/*2022-03-21*/*" --profile default
+aws s3 --recursive rm s3://gametaverse-daily-starsharks --exclude "*" --include "cache/*2022-03-21*/*" --profile prod
