@@ -8,10 +8,6 @@ echo $d
 d7=$(date --date="${d} -8 day" +"%Y-%m-%d")
 d31=$(date --date="${d} -31 day" +"%Y-%m-%d")
 dorigin='2021-12-16'
-echo $d
-echo $d7
-echo $d31
-echo $dorigin
 service='https://qhvc5to10e.execute-api.us-west-1.amazonaws.com/staging/grafana/query'
 for fromdate in $d7 $d31 $dorigin
 do 
