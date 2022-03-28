@@ -25,6 +25,6 @@ do
                 "from": "'$fromdate'T00:00:00.000Z",
                 "to": "'$d'T00:00:00.000Z"
             }
-        }'
+        }' &
     done
 done
