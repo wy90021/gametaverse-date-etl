@@ -15,8 +15,6 @@ then
       echo "need local folder input, e.g. bash upload_s3.sh 2021-12-20 gametaverse-starsharks-daily preprocessed"
       exit 0
 fi
-today=$(date +"%Y-%m-%d")
-echo "today: $today"
 d=$1
 bucket=$2
 local_folder=$3
