@@ -30,6 +30,3 @@ rm rawdata/$1/transactions.csv
 echo "Getting transfers and logs"
 ethereumetl export_receipts_and_logs --transaction-hashes rawdata/$1/in-game-transaction-hashes.csv --logs-output rawdata/$1/in-game-logs.csv --provider-uri https://bsc-dataseed.binance.org/ --max-workers 5 --batch-size 100
 ethereumetl extract_token_transfers --logs rawdata/$1/in-game-logs.csv --output rawdata/$1/in-game-token-transfers.csv
-
-
-
